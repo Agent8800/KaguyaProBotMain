@@ -588,7 +588,6 @@ __help__ = """
 • `/aq`*:* sends random anime quotes.
 • `/kayo`*:* search an Anime on AnimeKayo website.
 • `/fcl`*:* Check your favourite characters
-• `/kaizoku`*:* search an Anime on AnimeKaizoku website.
  """
 __mod_name__ = "Anime"
 __command_list__ = [
