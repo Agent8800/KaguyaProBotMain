@@ -307,13 +307,13 @@ def info(update: Update, context: CallbackContext):
         text += "\n\nThis user is member of 'Vice-President'."
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nThe Disaster level of this person is 'Secretary'."
+        text += "\n\nThe Disaster level of this person is 'Treasurer'."
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nThe Disaster level of this person is 'Council'."
+        text += "\n\nThe Disaster level of this person is 'Secretary'."
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nThe Disaster level of this person is 'BBF'."
+        text += "\n\nThe Disaster level of this person is 'Employee'."
         disaster_level_present = True
     elif user.id in WOLVES:
         text += "\n\nThe Disaster level of this person is 'Council Member'."
@@ -353,9 +353,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/KennedyProject/44"),
+                                "Health", url="https://t.me/ShinomiyaUpdates/6"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/KennedyProject/43")
+                                "Disaster", url="https://t.me/ShinomiyaUpdates/4")
                         ],
                     ]
                 ),
