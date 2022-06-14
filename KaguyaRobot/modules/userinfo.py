@@ -37,7 +37,7 @@ from KaguyaRobot.modules.sql import SESSION
 import KaguyaRobot.modules.sql.userinfo_sql as sql
 from KaguyaRobot.modules.disable import DisableAbleCommandHandler
 from KaguyaRobot.modules.sql.global_bans_sql import is_user_gbanned
-from AsukaRobot.modules.redis.afk_redis import is_user_afk, afk_reason
+from KaguyaRobot.modules.redis.afk_redis import is_user_afk, afk_reason
 from KaguyaRobot.modules.sql.users_sql import get_user_num_chats
 from KaguyaRobot.modules.helper_funcs.chat_status import sudo_plus
 from KaguyaRobot.modules.helper_funcs.extraction import extract_user
