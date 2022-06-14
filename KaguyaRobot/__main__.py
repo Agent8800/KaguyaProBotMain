@@ -88,7 +88,6 @@ PM_START_TEXT = """
   ───────────────────────
   ◈ Version : 3.10.6
   ◈ Server Uptime : {}
-  ◈ {} Users , Across {} Chats.
   ───────────────────────
   ➢ Try The Help Buttons Below To Know My Abilities ××
 """
