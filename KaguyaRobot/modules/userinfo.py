@@ -37,7 +37,7 @@ from KaguyaRobot.modules.sql import SESSION
 import KaguyaRobot.modules.sql.userinfo_sql as sql
 from KaguyaRobot.modules.disable import DisableAbleCommandHandler
 from KaguyaRobot.modules.sql.global_bans_sql import is_user_gbanned
-from KaguyaRobot.modules.sql.afk_sql import is_afk, set_afk
+from AsukaRobot.modules.redis.afk_redis import is_user_afk, afk_reason
 from KaguyaRobot.modules.sql.users_sql import get_user_num_chats
 from KaguyaRobot.modules.helper_funcs.chat_status import sudo_plus
 from KaguyaRobot.modules.helper_funcs.extraction import extract_user
@@ -110,8 +110,8 @@ def hpmanager(user):
         if not sql.get_user_bio(user.id):
             new_hp -= no_by_per(total_hp, 10)
 
-        if is_afk(user.id):
-            afkst = set_afk(user.id)
+        if is_user_afk(user.id):
+            afkst = afk_reason(user.id)
             # if user is afk and no reason then decrease 7%
             # else if reason exist decrease 5%
             new_hp -= no_by_per(total_hp, 7) if not afkst else no_by_per(total_hp, 5)
@@ -273,7 +273,7 @@ def info(update: Update, context: CallbackContext):
     if chat.type != "private" and user_id != bot.id:
         _stext = "\n✪ Presence: <code>{}</code>"
 
-        afk_st = is_afk(user.id)
+        afk_st = is_user_afk(user.id)
         if afk_st:
             text += _stext.format("AFK")
         else:
