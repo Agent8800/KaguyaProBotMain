@@ -580,4 +580,4 @@ except BaseException:
 
 finally:
 
-   REDIS.ping(
+   REDIS.ping()
