@@ -84,12 +84,13 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
   ────「 кαgυуα ѕнιиσмιуα 」────
   [やあ]({}) Kon'ichiwa {} - San!
-  I'm Vice-President Of Council Here To Manage Your Group With Useful & Advanced Features 
-  ───────────────────────
-  ◈ Version : 3.10.6
-  ◈ Server Uptime : {}
-  ───────────────────────
-  ➢ Try The Help Buttons Below To Know My Abilities ××
+やあ "O Kawaii Koto" {} - San!
+I'm Vice-President Of Council Here To Manage Your Group With Useful & Advanced Features 
+ ───────────────────────
+◈ Version : 3.10.6
+◈ Server Uptime : {}
+ ───────────────────────
+➢ Try The More Options Buttons Below To See The Available Commands ××
 """
 
 PHOTO = (
