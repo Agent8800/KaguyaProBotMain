@@ -104,8 +104,8 @@ buttons = [
         InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ", url="t.me/KaguyaProBot?startgroup=new"),
     ],
     [
-        InlineKeyboardButton(text="Tenki Sopport", url="t.me/Hellsingnetwork"),
-        InlineKeyboardButton(text="ɴᴇᴛᴡᴏʀᴋ Updates", url="t.me/Hellsingnetwork"),
+        InlineKeyboardButton(text="ᴛᴇɴᴋɪ sᴜᴘᴘᴏʀᴛ", url="t.me/ShinomiyaSupport"),
+        InlineKeyboardButton(text="ɴᴇᴛᴡᴏʀᴋ", url="t.me/Hellsingnetwork"),
     ],
     [
         InlineKeyboardButton(text="ᴍᴏʀᴇ ᴏᴘᴛɪᴏɴs", callback_data="Kaguya_"),
