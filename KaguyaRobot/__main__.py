@@ -105,8 +105,6 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="Tenki Sopport", url="t.me/Hellsingnetwork"),
-    ],
-    [
         InlineKeyboardButton(text="ɴᴇᴛᴡᴏʀᴋ Updates", url="t.me/Hellsingnetwork"),
     ],
     [
