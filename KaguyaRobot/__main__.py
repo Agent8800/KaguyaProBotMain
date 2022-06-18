@@ -82,7 +82,8 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-[やあ]({}) "O Kawaii Koto" {} - San!
+────「 [Kaguya Shinomiya]({}) 」────
+やあ "O Kawaii Koto" {} - San!
 I'm Vice-President Of Council Here To Manage Your Group With Useful & Advanced Features 
 
 ◈ Version : 3.10.6
