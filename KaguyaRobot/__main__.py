@@ -239,9 +239,9 @@ reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/NexusXSupport"),
+                                "sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/ShinomiyaSupport"),
                             InlineKeyboardButton(
-                                "ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/TeamNexusX")
+                                "ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/ShinomiyaUpdates")
                         ],
                     ]
                 ),
@@ -332,7 +332,7 @@ def Kaguya_about_callback(update, context):
                     InlineKeyboardButton(text="ɴᴏᴛᴇs", callback_data="about_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url="t.me/NexusXSupport"),
+                    InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url="t.me/ShinomiyaSupport"),
                     InlineKeyboardButton(text="ᴄʀᴇᴅɪᴛs", callback_data="about_credits"),
                  ],
                  [ 
