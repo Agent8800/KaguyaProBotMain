@@ -214,7 +214,6 @@ def warn_user(update: Update, context: CallbackContext) -> str:
 @user_admin
 @bot_admin
 @loggable
-@typing_action
 def remove_warns(update, context):
     message = update.effective_message  # type: Optional[Message]
     chat = update.effective_chat  # type: Optional[Chat]
