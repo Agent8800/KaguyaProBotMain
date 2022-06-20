@@ -211,6 +211,36 @@ def warn_user(update: Update, context: CallbackContext) -> str:
         message.reply_text("That looks like an invalid User ID to me.")
     return ""
 
+@user_admin
+@bot_admin
+@loggable
+@typing_action
+def remove_warns(update, context):
+    message = update.effective_message  # type: Optional[Message]
+    chat = update.effective_chat  # type: Optional[Chat]
+    user = update.effective_user  # type: Optional[User]
+    args = context.args
+    user_id = extract_user(message, args)
+
+    if user_id:
+        sql.remove_warn(user_id, chat.id)
+        message.reply_text("Last warn has been removed!")
+        warned = chat.get_member(user_id).user
+        return (
+            "<b>{}:</b>"
+            "\n#UNWARN"
+            "\n<b>• Admin:</b> {}"
+            "\n<b>• User:</b> {}"
+            "\n<b>• ID:</b> <code>{}</code>".format(
+                html.escape(chat.title),
+                mention_html(user.id, user.first_name),
+                mention_html(warned.id, warned.first_name),
+                warned.id,
+            )
+        )
+    message.reply_text("No user has been designated!")
+    return ""
+
 
 @user_admin
 # @user_can_ban
@@ -511,6 +541,13 @@ be a sentence, encompass it with quotes, as such: `/addwarn "very angry" This is
 __mod_name__ = "Warning"
 
 WARN_HANDLER = CommandHandler(["warn", "dwarn"], warn_user, filters=Filters.chat_type.groups, run_async=True)
+REMOVE_WARNS_HANDLER = CommandHandler(
+    ["rmwarn", "unwarn"],
+    remove_warns,
+    pass_args=True,
+    filters=Filters.chat_type.groups,
+    run_async=True,
+)
 RESET_WARN_HANDLER = CommandHandler(
     ["resetwarn", "resetwarns"], reset_warns, filters=Filters.chat_type.groups, run_async=True
 )
@@ -537,6 +574,7 @@ dispatcher.add_handler(RESET_WARN_HANDLER)
 dispatcher.add_handler(MYWARNS_HANDLER)
 dispatcher.add_handler(ADD_WARN_HANDLER)
 dispatcher.add_handler(RM_WARN_HANDLER)
+dispatcher.add_handler(REMOVE_WARNS_HANDLER)
 dispatcher.add_handler(LIST_WARN_HANDLER)
 dispatcher.add_handler(WARN_LIMIT_HANDLER)
 dispatcher.add_handler(WARN_STRENGTH_HANDLER)
