@@ -8,6 +8,7 @@ from telegram.error import BadRequest, TelegramError
 from telegram.ext import run_async, CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
 
+import KaguyaRobot.modules.sql.gmute_sql as sql
 from KaguyaRobot import dispatcher, OWNER_ID, DEV_USERS,DRAGONS,DEMONS, TIGERS, STRICT_GMUTE
 from KaguyaRobot.modules.helper_funcs.chat_status import user_admin, is_user_admin
 from KaguyaRobot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
