@@ -1,15 +1,13 @@
-import html
-
 from telegram.ext.filters import Filters
-from telegram import Update, message, ParseMode
-from telegram.ext import CallbackContext
-
 from KaguyaRobot.modules.helper_funcs.decorators import Kaguyacmd, Kaguyamsg
-from KaguyaRobot.modules.helper_funcs.channel_mode import user_admin, AdminPerms
-from KaguyaRobot.modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
-from KaguyaRobot.modules.language import gs
+from telegram import Update, message
+from telegram.ext import CallbackContext
+from ..modules.helper_funcs.anonymous import user_admin, AdminPerms
+import html
+from ..modules.sql.antichannel_sql import antichannel_status, disable_antichannel, enable_antichannel
 
-@Kaguyacmd(command="antichannelmode", group=100)
+
+@Kaguyacmd(command="antichannel", group=100)
 @user_admin(AdminPerms.CAN_RESTRICT_MEMBERS)
 def set_antichannel(update: Update, context: CallbackContext):
     message = update.effective_message
@@ -19,15 +17,16 @@ def set_antichannel(update: Update, context: CallbackContext):
         s = args[0].lower()
         if s in ["yes", "on"]:
             enable_antichannel(chat.id)
-            message.reply_html(text=gs(chat.id, "active_antichannel").format(html.escape(chat.title)))
+            message.reply_html("Enabled antichannel in {}".format(html.escape(chat.title)))
         elif s in ["off", "no"]:
             disable_antichannel(chat.id)
-            message.reply_html(text=gs(chat.id, "disable_antichannel").format(html.escape(chat.title)))
+            message.reply_html("Disabled antichannel in {}".format(html.escape(chat.title)))
         else:
-            message.reply_text(text=gs(chat.id, "invalid_antichannel").format(s))
+            message.reply_text("Unrecognized arguments {}".format(s))
         return
     message.reply_html(
-        text=gs(chat.id, "status_antichannel").format(antichannel_status(chat.id), html.escape(chat.title)))
+        "Antichannel setting is currently {} in {}".format(antichannel_status(chat.id), html.escape(chat.title)))
+
 
 @Kaguyamsg(Filters.chat_type.groups, group=110)
 def eliminate_channel(update: Update, context: CallbackContext):
@@ -40,12 +39,3 @@ def eliminate_channel(update: Update, context: CallbackContext):
         message.delete()
         sender_chat = message.sender_chat
         bot.ban_chat_sender_chat(sender_chat_id=sender_chat.id, chat_id=chat.id)
-        
-def helps(chat):
-    return gs(chat, "antichannel_help")
-
-__help__ = """
-  ──「 ANITCHANNELMODE 」──
-
-• `/antichannelmode`*:* on/off use this command for disabling channel channels from group"""
-__mod_name__ = "Anti-Channel"
