@@ -53,3 +53,12 @@ def wiki(update: Update, context: CallbackContext):
 
 WIKI_HANDLER = DisableAbleCommandHandler("wiki", wiki, run_async=True)
 dispatcher.add_handler(WIKI_HANDLER)
+
+
+__mod_name__ = "Announcements"
+
+__help__ ="""
+  ──「 Admin Annoucements 」──
+• `/announcements`*:* <on/off>
+"""
+
