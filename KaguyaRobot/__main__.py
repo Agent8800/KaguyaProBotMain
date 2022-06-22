@@ -878,12 +878,31 @@ def main():
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
                 f"""[Am Back to my job](https://telegra.ph/file/2225153fd8b747a9edeae.jpg)""",
-                parse_mode=ParseMode.MARKDOWN
-            )
+                parse_mode=ParseMode.MARKDOWN,
+
+            reply_markup=InlineKeyboardMarkup(
+
+                [
+
+                  [                  
+
+                       InlineKeyboardButton(
+
+                             text="[► Summon Me ◄]",
+
+                             url=f"t.me/KaguyaProBot?startgroup=true"),
+
+
+                     ] 
+
+                ]
+
+            ),
+
+        )
         except Unauthorized:
             LOGGER.warning(
-                "Bot isnt able to send message to support_chat, go and check!"
-            )
+                "Bot isnt able to send message to support_chat, go and check!")
         except BadRequest as e:
             LOGGER.warning(e.message)
 
