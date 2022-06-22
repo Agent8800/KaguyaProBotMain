@@ -208,10 +208,3 @@ def get_lst_of_files(input_directory, output_lst):
         output_lst.append(current_file_name)
     return output_lst
 
-
-__mod_name__ = "Announcements"
-
-__help__ ="""
-  ──「 Admin Annoucements 」──
-• `/announcements`*:* <on/off>
-"""
