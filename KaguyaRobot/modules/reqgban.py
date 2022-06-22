@@ -125,8 +125,3 @@ async def close_send_photo(_, CallbackQuery):
         )
     else:
         await CallbackQuery.message.delete()
-        
-__help__ ="""
-  ──「 GBan 」──
-• `/reqgban`*:* <target id/username> will request the gban to our support staff"""
-__mod_name__ = "ReqGBan"
