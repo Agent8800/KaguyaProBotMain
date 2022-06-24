@@ -46,6 +46,18 @@ from KaguyaRobot.modules.log_channel import gloggable, loggable
 from KaguyaRobot.modules.language import gs
 
 
+BAN_IMG = [ "",
+            "",
+            ""]
+
+KICK_IMG = [ "",
+             "",
+             ""]
+
+UNBAN = [ "",
+          "",
+          ""]
+
 
 @connection_status
 @bot_admin
@@ -143,9 +155,10 @@ def ban(update: Update, context: CallbackContext) -> str:
         if reason:
             reply += f"\nReason: {html.escape(reason)}"
 
-        bot.sendMessage(
+        bot.send_animation(
+            animation=BAN_IMG,
             chat.id,
-            reply,
+            caption=reply,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -316,8 +329,9 @@ def unbanb_btn(update: Update, context: CallbackContext) -> str:
             except BadRequest:
                 pass
             chat.unban_member(user_id)
-            query.message.edit_text(
-                f"{member.user.first_name} [{member.user.id}] Unbanned."
+            query.message.delete()
+            bot.send_animation(chat.id,animation=UNBAN_IMG,
+                caption=f"{member.user.first_name} [{member.user.id}] Unbanned."
             )
             bot.answer_callback_query(query.id, text="Unbanned!")
             return (
@@ -377,9 +391,9 @@ def punch(update: Update, context: CallbackContext) -> str:
     res = chat.unban_member(user_id)  # unban on current user = kick
     if res:
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
-        bot.sendMessage(
+        bot.send_animation(animation=KICK_IMG,
             chat.id,
-            f"{mention_html(member.user.id, html.escape(member.user.first_name))} [<code>{member.user.id}</code>] Kicked.",
+            caption=f"{mention_html(member.user.id, html.escape(member.user.first_name))} [<code>{member.user.id}</code>] Kicked.",
             parse_mode=ParseMode.HTML
         )
         log = (
@@ -463,8 +477,8 @@ def unban(update: Update, context: CallbackContext) -> Optional[str]:
         return log_message
 
     chat.unban_member(user_id)
-    message.reply_text(
-        f"{member.user.first_name} [{member.user.id}] Unbanned."
+    message.reply_animation(animation=UNBAN_IMG,
+        caption=f"{member.user.first_name} [{member.user.id}] Unbanned."
     )
 
     log = (
