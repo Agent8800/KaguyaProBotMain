@@ -7,7 +7,7 @@ ffmpeg-python==0.2.0
 redis==3.5.3
 aioredis==2.0.1
 hiredis==2.0.0
-python-arq==6.0.3
+Python_arq
 motor
 multicolorcaptcha
 ptbcontrib @ git+https://github.com/python-telegram-bot/ptbcontrib.git@907070d129b7cf80b0236d72fb498667b5b22b63
@@ -60,4 +60,3 @@ youtube_search
 youtube-search-python
 gitpython
 youtube_dl
-pyrogram==1.4.0
