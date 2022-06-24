@@ -165,9 +165,8 @@ def ban(update: Update, context: CallbackContext) -> str:
                     ]
                 ]
             ),
-            parse_mode=ParseMode.HTML
-        )     
-        return log
+            parse_mode=ParseMode.HTML)  
+            return log
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
