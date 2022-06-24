@@ -46,15 +46,15 @@ from KaguyaRobot.modules.log_channel import gloggable, loggable
 from KaguyaRobot.modules.language import gs
 
 
-BAN_IMG = [ "",
+BAN_IMG = [ "https://telegra.ph/file/217734f29cc6ffd2f543a.png",
             "",
             ""]
 
-KICK_IMG = [ "",
+KICK_IMG = [ "https://telegra.ph/file/217734f29cc6ffd2f543a.png",
              "",
              ""]
 
-UNBAN = [ "",
+UNBAN = [ "https://telegra.ph/file/217734f29cc6ffd2f543a.png",
           "",
           ""]
 
