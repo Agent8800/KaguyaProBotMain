@@ -46,17 +46,13 @@ from KaguyaRobot.modules.log_channel import gloggable, loggable
 from KaguyaRobot.modules.language import gs
 
 
-BAN_IMG = [ "https://telegra.ph/file/217734f29cc6ffd2f543a.png",
-            "",
-            ""]
+BAN_IMG = "https://telegra.ph/file/217734f29cc6ffd2f543a.png"
+      
 
-KICK_IMG = [ "https://telegra.ph/file/217734f29cc6ffd2f543a.png",
-             "",
-             ""]
+KICK_IMG = "https://telegra.ph/file/217734f29cc6ffd2f543a.png"
 
-UNBAN = [ "https://telegra.ph/file/217734f29cc6ffd2f543a.png",
-          "",
-          ""]
+UNBAN = "https://telegra.ph/file/217734f29cc6ffd2f543a.png"
+        
 
 
 @connection_status
@@ -170,8 +166,9 @@ def ban(update: Update, context: CallbackContext) -> str:
                     ]
                 ]
             ),
-            parse_mode=ParseMode.HTML,)     
-            return log
+            parse_mode=ParseMode.HTML,
+        )     
+        return log
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
