@@ -170,9 +170,8 @@ def ban(update: Update, context: CallbackContext) -> str:
                     ]
                 ]
             ),
-            parse_mode=ParseMode.HTML,
-        
-        )
+            parse_mode=ParseMode.HTML,        
+                )
         return log
 
     except BadRequest as excp:
