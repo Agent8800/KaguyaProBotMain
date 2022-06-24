@@ -13,16 +13,16 @@ async def _(event):
            return
     kontol = await event.reply("`Processing tiny...`")
     ik = await tbot.download_media(reply)
-    im1 = Image.open("KaguyaRobot/resources/Kaguya_stickers.png")
+    im1 = Image.open("KaguyaRobot/resources/blank_background.png")
     if ik.endswith(".tgs"):
-        await tbot.download_media(reply, "ken.tgs")
-        os.system("lottie_convert.py ken.tgs json.json")
+        await tbot.download_media(reply, "blank_background.tgs")
+        os.system("lottie_convert.py blank_background.tgs json.json")
         json = open("json.json", "r")
         jsn = json.read()
         jsn = jsn.replace("512", "2000")
         open = ("json.json", "w").write(jsn)
-        os.system("lottie_convert.py json.json ken.tgs")
-        file = "ken.tgs"
+        os.system("lottie_convert.py json.json blank_background.tgs")
+        file = "blank_background.tgs"
         os.remove("json.json")
     elif ik.endswith((".gif", ".mp4")):
         iik = cv2.VideoCapture(ik)
@@ -75,9 +75,7 @@ async def _(event):
     await kontol.delete()
     os.remove(file)
     os.remove(ik)
-
-    __help__ = """
-      ──「 TINY 」──
-    
-• `/tiny`*:* reply to any sticker or png to tiny it"""
 __mod_name__ = "Tiny"
+__help__ = """
+❍ /tiny*:* reply a sticker and see magic
+"""
