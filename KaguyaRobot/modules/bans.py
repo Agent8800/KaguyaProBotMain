@@ -543,9 +543,17 @@ def snipe(update: Update, context: CallbackContext):
                 "Couldn't send the message. Perhaps I'm not part of that group?"
             )
 
-__mod_name__ = "Bans/Mutes"
 
-__help__ = """
+from KaguyaRobot.modules.language import gs
+
+
+def helps(chat):
+    return gs(chat, "ban_help")
+
+__mod_name__ = "Ban/Mutes"
+
+__help__ ="""
+──「 Gban Request 」──
 *User Commands:*
   ➢ `/kickme`*:* kicks the user who issued the command
   
