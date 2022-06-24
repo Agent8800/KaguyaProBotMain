@@ -548,7 +548,7 @@ from KaguyaRobot.modules.language import gs
 
 
 def helps(chat):
-    return gs(chat, "bans_help")
+    return gs(chat, "bansmutes_help")
 
 __mod_name__ = "Ban/Mutes"
 
