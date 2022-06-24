@@ -44,9 +44,9 @@ from KaguyaRobot.modules.helper_funcs.extraction import extract_user_and_text
 from KaguyaRobot.modules.helper_funcs.string_handling import extract_time
 from KaguyaRobot.modules.log_channel import gloggable, loggable
 
-BAN_IMG = "
-UNBAN_IMG = "
-KICK_IMG = "
+BAN_IMG = "https://telegra.ph/file/e2034322c680ed63a0c4f.jpg"
+UNBAN_IMG = "https://telegra.ph/file/9e9e1112a16894e7998cf.jpg"
+KICK_IMG = "https://telegra.ph/file/d9c46e3db8952c020256b.jpg"
 
 @connection_status
 @bot_admin
