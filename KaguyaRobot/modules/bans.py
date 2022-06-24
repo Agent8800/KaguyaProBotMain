@@ -47,11 +47,10 @@ from KaguyaRobot.modules.language import gs
 
 
 BAN_IMG = "https://telegra.ph/file/217734f29cc6ffd2f543a.png"
-      
 
 KICK_IMG = "https://telegra.ph/file/217734f29cc6ffd2f543a.png"
 
-UNBAN = "https://telegra.ph/file/217734f29cc6ffd2f543a.png"
+UNBAN_IMG = "https://telegra.ph/file/217734f29cc6ffd2f543a.png"
         
 
 
@@ -152,8 +151,8 @@ def ban(update: Update, context: CallbackContext) -> str:
         if reason:
             reply += f"\nReason: {html.escape(reason)}"
 
-        bot.send_animation(
-            animation=BAN_IMG,
+        bot.send_photo(
+            photo=BAN_IMG,
             chat.id,
             caption=reply,
             reply_markup=InlineKeyboardMarkup(
@@ -326,7 +325,9 @@ def unbanb_btn(update: Update, context: CallbackContext) -> str:
                 pass
             chat.unban_member(user_id)
             query.message.delete()
-            bot.send_animation(chat.id,animation=UNBAN_IMG,
+            bot.send_photo(
+                chat.id,
+                photo=UNBAN_IMG,
                 caption=f"{member.user.first_name} [{member.user.id}] Unbanned."
             )
             bot.answer_callback_query(query.id, text="Unbanned!")
@@ -387,7 +388,8 @@ def punch(update: Update, context: CallbackContext) -> str:
     res = chat.unban_member(user_id)  # unban on current user = kick
     if res:
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
-        bot.send_animation(animation=KICK_IMG,
+        bot.send_photo(
+            photo=KICK_IMG,
             chat.id,
             caption=f"{mention_html(member.user.id, html.escape(member.user.first_name))} [<code>{member.user.id}</code>] Kicked.",
             parse_mode=ParseMode.HTML
