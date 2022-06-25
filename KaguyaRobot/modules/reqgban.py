@@ -77,7 +77,7 @@ async def reqgban(_, msg: Message):
         if bugs:
             await msg.reply_text(
                 f"<b>Gban Request : {bugs}</b>\n\n"
-                "<b>The gban was successfully requested to the support group!</b>",
+                "<b>The gban was successfully requested to the support group @NexusXSupport!</b>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
