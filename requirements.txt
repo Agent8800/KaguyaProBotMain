@@ -50,7 +50,6 @@ pyrogram==1.4.16
 ujson
 regex
 bs4
-CurrencyConverter
 google_images_download
 google-api-python-client
 googletrans
