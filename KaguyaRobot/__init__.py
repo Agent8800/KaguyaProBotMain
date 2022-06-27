@@ -127,9 +127,20 @@ if ENV:
     ARQ_API_URL = "https://thearq.tech"
     ARQ_API_KEY = ARQ_API
     ERROR_LOGS = os.environ.get("ERROR_LOGS")
-
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
-
+    #IGNORE THIS 
+    DOWN_PATH = "anibot/downloads/"
+    TRIGGERS = os.environ.get("TRIGGERS", "/ !").split()
+    
+    #ANILISt CREDENTIALS
+    ANILIST_CLIENT = os.environ.get("ANILIST_CLIENT")
+    ANILIST_SECRET = os.environ.get("ANILIST_SECRET")
+    ANILIST_REDIRECT_URL = os.environ.get("ANILIST_REDIRECT_URL", "https://anilist.co/api/v2/oauth/pin")
+    
+    has_user: bool = False
+    if os.environ.get('USER_SESSION'): 
+        has_user: bool = True
+        user = Client(os.environ.get('USER_SESSION'), api_id=API_ID, api_hash=API_HASH)
     try:
         BL_CHATS = {int(x) for x in os.environ.get("BL_CHATS", "").split()}
     except ValueError:
@@ -216,12 +227,7 @@ else:
 # If you forking dont remove this id, just add your id. LOL...
 
 DRAGONS.add(OWNER_ID)
-DRAGONS.add(5148561602)
-DRAGONS.add(1938491135)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(5148561602)
-DEV_USERS.add(5132611794)
-DEV_USERS.add(1938491135)
 
 if not SPAMWATCH_API:
     sw = None
@@ -306,7 +312,7 @@ tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
 tg.MessageHandler = CustomMessageHandler
 
-REDIS_URL = "redis://xelcius:Xelcius~97@redis-11262.c301.ap-south-1-1.ec2.cloud.redislabs.com:11262"
+REDIS_URL = "redis://:25wDxkddl8J9ncWwMT6zMzthwpklnEAd@redis-19232.c283.us-east-1-4.ec2.cloud.redislabs.com:19232"
 
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
