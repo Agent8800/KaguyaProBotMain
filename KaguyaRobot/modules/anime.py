@@ -222,12 +222,3 @@ dispatcher.add_handler(ANIDL_SEARCH_HANDLER)
 dispatcher.add_handler(MEME_HANDLER)
 
 __mod_name__ = "Anime"
-__command_list__ = [
-    "anime", "manga", "character", "user", "upcoming", "kaizoku", "airing",
-    "kayo"
-]
-__handlers__ = [
-    ANIME_HANDLER, CHARACTER_HANDLER, MANGA_HANDLER, USER_HANDLER,
-    UPCOMING_HANDLER, KAIZOKU_SEARCH_HANDLER, KAYO_SEARCH_HANDLER,
-    BUTTON_HANDLER, AIRING_HANDLER
-]
