@@ -19,10 +19,6 @@ from KaguyaRobot.utils.db import get_collection
 GROUPS = get_collection("GROUPS")
 SFW_GRPS = get_collection("SFW_GROUPS")
 DC = get_collection('DISABLED_CMDS')
-AG = get_collection('AIRING_GROUPS')
-CG = get_collection('CRUNCHY_GROUPS')
-SG = get_collection('SUBSPLEASE_GROUPS')
-HD = get_collection('HEADLINES_GROUPS')
 
 no_pic = [
     'https://telegra.ph/file/0d2097f442e816ba3f946.jpg',
@@ -46,7 +42,7 @@ async def anime_cmd(client: anibot, message: Message, mdata: dict):
         except KeyError:
             gidtitle = mdata['chat']['title']
         await GROUPS.insert_one({"id": gid, "grp": gidtitle})
-        await clog("ErzaBot", f"Bot added to a new group\n\n{gidtitle}\nID: `{gid}`", "NEW_GROUP")
+        await clog("KAGUYA", f"Bot added to a new group\n\n{gidtitle}\nID: `{gid}`", "NEW_GROUP")
     find_gc = await DC.find_one({'_id': gid})
     if find_gc is not None and 'anime' in find_gc['cmd_list'].split():
         return
@@ -90,7 +86,7 @@ async def manga_cmd(client: anibot, message: Message, mdata: dict):
         except KeyError:
             gidtitle = mdata['chat']['title']
         await GROUPS.insert_one({"id": gid, "grp": gidtitle})
-        await clog("ANIBOT", f"Bot added to a new group\n\n{gidtitle}\nID: `{gid}`", "NEW_GROUP")
+        await clog("KAGUYA", f"Bot added to a new group\n\n{gidtitle}\nID: `{gid}`", "NEW_GROUP")
     find_gc = await DC.find_one({'_id': gid})
     if find_gc is not None and 'manga' in find_gc['cmd_list'].split():
         return
@@ -133,7 +129,7 @@ async def character_cmd(client: anibot, message: Message, mdata: dict):
         except KeyError:
             gidtitle = mdata['chat']['title']
         await GROUPS.insert_one({"id": gid, "grp": gidtitle})
-        await clog("ANIBOT", f"Bot added to a new group\n\n{gidtitle}\nID: `{gid}`", "NEW_GROUP")
+        await clog("KAGUYA", f"Bot added to a new group\n\n{gidtitle}\nID: `{gid}`", "NEW_GROUP")
     find_gc = await DC.find_one({'_id': gid})
     if find_gc is not None and 'character' in find_gc['cmd_list'].split():
         return
@@ -311,7 +307,7 @@ async def auth_link_cmd(client, message: Message, mdata: dict):
         )
 
 
-@anibot.on_message(~filters.private & filters.command(["setup", f"setup{BOT_NAME}"], prefixes=trg))
+@anibot.on_message(~filters.private & filters.command(["aninsfw", f"animsfw{BOT_NAME}"], prefixes=trg))
 @control_user
 async def sfw_cmd(client: anibot, message: Message, mdata: dict):
     user = mdata['from_user']['id']
@@ -321,34 +317,15 @@ async def sfw_cmd(client: anibot, message: Message, mdata: dict):
 This allows you to change group setup
         
 NSFW toggle switches on filtering of 18+ marked content
-Airing notifications notifies about airing of anime in recent
-Crunchyroll updates will toggle notifications about release of animes on crunchyroll site
-Subsplease updates will toggle notifications about release of animes on subsplease site
-Headlines will toggle notifications for anime news powered by livechart.me
+Airing notifications notifies about airing of anime in rec
 """
         sfw = "NSFW: Allowed"
         if await (SFW_GRPS.find_one({"id": cid})):
             sfw = "NSFW: Not Allowed"
-        notif = "Airing notifications: OFF"
-        if await (AG.find_one({"_id": cid})):
-            notif = "Airing notifications: ON"
-        cr = "Crunchyroll Updates: OFF"
-        if await (CG.find_one({"_id": cid})):
-            cr = "Crunchyroll Updates: ON"
-        sp = "Subsplease Updates: OFF"
-        if await (SG.find_one({"_id": cid})):
-            sp = "Subsplease Updates: ON"
-        hd = "Headlines: OFF"
-        if await (HD.find_one({"_id": cid})):
-            hd = "Headlines: ON"
         await message.reply_text(
             text = text,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton(text=sfw, callback_data=f"settogl_sfw_{cid}")],
-                [InlineKeyboardButton(text=notif, callback_data=f"settogl_notif_{cid}")],
-                [InlineKeyboardButton(text=cr, callback_data=f"settogl_cr_{cid}")],
-                [InlineKeyboardButton(text=sp, callback_data=f"settogl_sp_{cid}")],
-                [InlineKeyboardButton(text=hd, callback_data=f"settogl_hd_{cid}")]
+                [InlineKeyboardButton(text=sfw, callback_data=f"settogl_sfw_{cid}")]
             ])
         )
 

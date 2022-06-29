@@ -179,34 +179,58 @@ def meme(update: Update, context: CallbackContext):
                 
                 
 __help__ = """
-Get information about anime, manga or characters from [AniList](anilist.co).
-*Available commands:*
-                               
-➩ *Anime search:*                            
- ✪ /anime <anime>*:* returns information about the anime.
- ✪ /whatanime*:* returns source of anime when replied to photo or gif.                                                          
- ✪ /character <character>*:* returns information about the character.
- ✪ /manga <manga>*:* returns information about the manga.
- ✪ /user <user>*:* returns information about a MyAnimeList user.
- ✪ /upcoming*:* returns a list of new anime in the upcoming seasons.
- ✪ /airing <anime>*:* returns anime airing info.
- ✪ /indi <anime>*:* search an anime on indianime.com
- ✪ /kaizoku <anime>*:* search an anime on animekaizoku.com
- ✪ /kayo <anime>*:* search an anime on animekayo.com
- ✪ /anidl <anime>*:* search an anime on anidl.org
-                               
-➩ *Watchlist:*                             
- ✪ /watchlist*:* to get your saved watchlist.
- ✪ /mangalist*:* to get your saved manga read list.
- ✪ /characterlist | fcl*:* to get your favorite characters list.
- ✪ /removewatchlist | rwl <anime>*:* to remove a anime from your list.
- ✪ /rfcharacter | rfcl <character>*:* to remove a character from your list.  
- ✪ /rmanga | rml <manga>*:* to remove a manga from your list.
+  ◆/anime - Fetches info on single anime (includes
+           buttons to look up for prequels and
+           sequels)
+  ◆/anilist - Fetches info on multiple possible
+             animes related to query
+  ◆/character - Fetches info on multiple possible
+               characters related to query
+  ◆/manga - Fetches info on multiple possible
+           mangas related to query
+  ◆/airing - Fetches info on airing data for anime
+  ◆/browse - get popular, trending or upcoming
+            animes
+  ◆/whatanime - search any anime media powered by
+               tracemoepy
+  ◆/watchorder - Fetches watch order for anime
+                series
+  ◆/fillers - To get list of anime fillers
+  ◆/top - to retrieve top animes for a genre or
+          tags
+  ◆/gettags - Get list of available Tags
+  ◆/getgenres - Get list of available Genres
+  
+                **Anilist Account Help🈚 :**
+                
+  ◆/auth - Fetches info on how to authorize
+           anilist account                
+  ◆/flex - Fetches anilist info of an authorised
+           user
+  ◆/user - Fetches anilist info as per query
+  ◆/schedule - Fetches scheduled animes
+  ◆/logout - removes authorization
+  ◆/favourites - Get Anilist favourites
+  ◆/me or /activity - Get Anilist recent activity
+   
+     **NSFW lock , Anime News and aniCommand disabling☮️ :**
  
-➩ *Anime Fun:*
- ✪ /animequotes*:* random anime quote.
- ✪ /meme*:* sends a random anime meme form reddit `r/animemes`.                           
+  ◆/anisettings - To toggle nsfw lock and airing
+                  notifications in groups
+  ◆/anidisable - To disable a command in group
+  ◆/anienable - To enable a command in group
+  ◆/anidisabled - To list disabled commands in a grou
+  
+          **Anime  Sites Help♐ :**
+          
+  ◆/kayo*:* Find anime from animekayo website.
+  ◆/kaizoku*:* Find anime from kaizoku website.
+  ◆/indi*:* Find anime from indianime.com 
+  ◆/anidl*:* search an anime on anidl.org
  """
+     
+ __mod_name__ = "Anime"
+ 
 
 KAIZOKU_SEARCH_HANDLER = DisableAbleCommandHandler("kaizoku", kaizoku)
 KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo)
@@ -220,5 +244,3 @@ dispatcher.add_handler(KAYO_SEARCH_HANDLER)
 dispatcher.add_handler(INDI_SEARCH_HANDLER)
 dispatcher.add_handler(ANIDL_SEARCH_HANDLER)
 dispatcher.add_handler(MEME_HANDLER)
-
-__mod_name__ = "Anime"
