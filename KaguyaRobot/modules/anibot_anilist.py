@@ -317,7 +317,6 @@ async def sfw_cmd(client: anibot, message: Message, mdata: dict):
 This allows you to change group setup
         
 NSFW toggle switches on filtering of 18+ marked content
-Airing notifications notifies about airing of anime in rec
 """
         sfw = "NSFW: Allowed"
         if await (SFW_GRPS.find_one({"id": cid})):
