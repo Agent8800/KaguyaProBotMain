@@ -176,61 +176,8 @@ def meme(update: Update, context: CallbackContext):
     msg.reply_photo(
                 photo=image, caption=caption)
                 
-                
-                
-__help__ = """
-  ◆/anime - Fetches info on single anime (includes
-           buttons to look up for prequels and
-           sequels)
-  ◆/anilist - Fetches info on multiple possible
-             animes related to query
-  ◆/character - Fetches info on multiple possible
-               characters related to query
-  ◆/manga - Fetches info on multiple possible
-           mangas related to query
-  ◆/airing - Fetches info on airing data for anime
-  ◆/browse - get popular, trending or upcoming
-            animes
-  ◆/whatanime - search any anime media powered by
-               tracemoepy
-  ◆/watchorder - Fetches watch order for anime
-                series
-  ◆/fillers - To get list of anime fillers
-  ◆/top - to retrieve top animes for a genre or
-          tags
-  ◆/gettags - Get list of available Tags
-  ◆/getgenres - Get list of available Genres
-  
-                **Anilist Account Help🈚 :**
-                
-  ◆/auth - Fetches info on how to authorize
-           anilist account                
-  ◆/flex - Fetches anilist info of an authorised
-           user
-  ◆/user - Fetches anilist info as per query
-  ◆/schedule - Fetches scheduled animes
-  ◆/logout - removes authorization
-  ◆/favourites - Get Anilist favourites
-  ◆/me or /activity - Get Anilist recent activity
-   
-     **NSFW lock , Anime News and aniCommand disabling☮️ :**
- 
-  ◆/anisettings - To toggle nsfw lock and airing
-                  notifications in groups
-  ◆/anidisable - To disable a command in group
-  ◆/anienable - To enable a command in group
-  ◆/anidisabled - To list disabled commands in a grou
-  
-          **Anime  Sites Help♐ :**
-          
-  ◆/kayo*:* Find anime from animekayo website.
-  ◆/kaizoku*:* Find anime from kaizoku website.
-  ◆/indi*:* Find anime from indianime.com 
-  ◆/anidl*:* search an anime on anidl.org
- """
-     
- __mod_name__ = "Anime"
- 
+def helps(chat):
+    return gs(chat, "anime_help")
 
 KAIZOKU_SEARCH_HANDLER = DisableAbleCommandHandler("kaizoku", kaizoku)
 KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo)
@@ -244,3 +191,5 @@ dispatcher.add_handler(KAYO_SEARCH_HANDLER)
 dispatcher.add_handler(INDI_SEARCH_HANDLER)
 dispatcher.add_handler(ANIDL_SEARCH_HANDLER)
 dispatcher.add_handler(MEME_HANDLER)
+
+__mod_name__ = "Anime"

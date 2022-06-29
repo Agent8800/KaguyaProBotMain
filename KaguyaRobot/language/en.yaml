@@ -124,21 +124,53 @@ admin_help: |
 anime_help: |
     ──「 Anime Search 」──   
 
-    ❂ /anime <anime>: returns information about the anime.
-    ❂ /whatanime: returns source of anime when replied to photo or gif.                                                          
-    ❂ /character <character>: returns information about the character.
-    ❂ /manga <manga>: returns information about the manga.
-    ❂ /user <user>: returns information about a MyAnimeList user.
-    ❂ /upcoming: returns a list of new anime in the upcoming seasons.
-    ❂ /airing <anime>: returns anime airing info.
-    ❂ /whatanime <anime>: reply to gif or photo.
-    ❂ /kaizoku <anime>: search an anime on animekaizoku.com
-    ❂ /kayo <anime>: search an anime on animekayo.com
-
-    ──「 Anime Quotes 」──
-
-    ❂ /animequotes: for anime quotes randomly as photos.
-    ❂ /quote: send quotes randomly as text
+    ◆/anime - Fetches info on single anime (includes
+              buttons to look up for prequels and
+              sequels)
+     ◆/anilist - Fetches info on multiple possible
+                animes related to query
+     ◆/character - Fetches info on multiple possible
+                  characters related to query
+     ◆/manga - Fetches info on multiple possible
+              mangas related to query
+     ◆/airing - Fetches info on airing data for anime
+     ◆/browse - get popular, trending or upcoming
+               animes
+     ◆/whatanime - search any anime media powered by
+                  tracemoepy
+     ◆/watchorder - Fetches watch order for anime
+                   series
+     ◆/fillers - To get list of anime fillers
+     ◆/top - to retrieve top animes for a genre or
+             tags
+     ◆/gettags - Get list of available Tags
+     ◆/getgenres - Get list of available Genres
+     
+                   **Anilist Account Help🈚 :**
+                   
+     ◆/auth - Fetches info on how to authorize
+              anilist account                
+     ◆/flex - Fetches anilist info of an authorised
+              user
+     ◆/user - Fetches anilist info as per query
+     ◆/schedule - Fetches scheduled animes
+     ◆/logout - removes authorization
+     ◆/favourites - Get Anilist favourites
+     ◆/me or /activity - Get Anilist recent activity
+      
+         **NSFW lock , Anime News and aniCommand disabling☮️ :**
+    
+     ◆/aninsfw- To toggle nsfw locks.
+     ◆/anidisable - To disable a command in group
+     ◆/anienable - To enable a command in group
+     ◆/anidisabled - To list disabled commands in a group
+     
+             **Anime  Sites Help♐ :**
+             
+     ◆/kayo*:* Find anime from animekayo website.
+     ◆/kaizoku*:* Find anime from kaizoku website.
+     ◆/indi*:* Find anime from indianime.com 
+     ◆/anidl*:* search an anime on anidl.org
 antichannel_help: |
     ──「 Anti-Channels 」──
 
@@ -292,6 +324,13 @@ disabling_help: |
     ❂ /enablemodule <module name>*:* enable all commands in that module
     ❂ /disablemodule <module name>*:* disable all commands in that module
     ❂ /listcmds*:* list all possible toggleable commands
+    
+    *Anime commands Disable:*
+    ❂ /anidisable <cmd name> :- to disbable ani anime related command
+    ❂ /anienable <cmd namr> :- to again enable any anime related command
+    ❂ /anidisabled  :- shows which commands are disabled in the group. 
+    
+    
 extras_help: |
     ──「 Extras 」──
 
