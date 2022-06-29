@@ -208,6 +208,12 @@ Get information about anime, manga or characters from [AniList](anilist.co).
  ✪ /meme*:* sends a random anime meme form reddit `r/animemes`.                           
  """
 
+ANIME_HANDLER = DisableAbleCommandHandler("anime", anime)
+AIRING_HANDLER = DisableAbleCommandHandler("airing", airing)
+CHARACTER_HANDLER = DisableAbleCommandHandler("character", character)
+MANGA_HANDLER = DisableAbleCommandHandler("manga", manga)
+USER_HANDLER = DisableAbleCommandHandler("user", user)
+UPCOMING_HANDLER = DisableAbleCommandHandler("upcoming", upcoming)
 KAIZOKU_SEARCH_HANDLER = DisableAbleCommandHandler("kaizoku", kaizoku)
 KAYO_SEARCH_HANDLER = DisableAbleCommandHandler("kayo", kayo)
 INDI_SEARCH_HANDLER = DisableAbleCommandHandler("indi", indi)
@@ -215,10 +221,16 @@ ANIDL_SEARCH_HANDLER = DisableAbleCommandHandler("anidl", anidl)
 MEME_HANDLER = DisableAbleCommandHandler("meme", meme)
 
 
+dispatcher.add_handler(ANIME_HANDLER)
+dispatcher.add_handler(CHARACTER_HANDLER)
+dispatcher.add_handler(MANGA_HANDLER)
+dispatcher.add_handler(AIRING_HANDLER)
+dispatcher.add_handler(USER_HANDLER)
 dispatcher.add_handler(KAIZOKU_SEARCH_HANDLER)
 dispatcher.add_handler(KAYO_SEARCH_HANDLER)
 dispatcher.add_handler(INDI_SEARCH_HANDLER)
 dispatcher.add_handler(ANIDL_SEARCH_HANDLER)
 dispatcher.add_handler(MEME_HANDLER)
+dispatcher.add_handler(UPCOMING_HANDLER)
 
 __mod_name__ = "Anime"
