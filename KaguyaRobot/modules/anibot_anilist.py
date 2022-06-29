@@ -317,6 +317,7 @@ async def sfw_cmd(client: anibot, message: Message, mdata: dict):
 This allows you to change group setup
         
 NSFW toggle switches on filtering of 18+ marked content
+
 """
         sfw = "NSFW: Allowed"
         if await (SFW_GRPS.find_one({"id": cid})):
@@ -525,81 +526,33 @@ async def top_tags_btn(client: anibot, cq: CallbackQuery, cdata: dict):
 
 @anibot.on_callback_query(filters.regex(pattern=r"settogl_(.*)"))
 async def nsfw_toggle_btn(client: anibot, cq: CallbackQuery):
-    cus = cq.from_user.id
-    gid = cq.data.split('_').pop()
-    try:
-        k = (await client.get_chat_member(gid, cus)).status
-    except UserNotParticipant:
+        cus = cq.from_user.id
+        gid = cq.data.split('_').pop()
+        try:
+            k = (await client.get_chat_member(gid, cus)).status
+        except UserNotParticipant:
+            await cq.answer()
+            return
+        if cus not in OWNER and str(k)=="member":
+            await cq.answer("You don't have enough permissions to change this!!!", show_alert=True)
+            return
         await cq.answer()
-        return
-    if cus not in OWNER and str(k)=="member":
-        await cq.answer("You don't have enough permissions to change this!!!", show_alert=True)
-        return
-    await cq.answer()
-    query = cq.data.split("_")
-    if await (SFW_GRPS.find_one({"id": int(query[2])})):
-        sfw = "NSFW: Not Allowed"
-    else:
-        sfw = "NSFW: Allowed"
-    if await (AG.find_one({"_id": int(query[2])})):
-        notif = "Airing notifications: ON"
-    else:
-        notif = "Airing notifications: OFF"
-    if await (CG.find_one({"_id": int(query[2])})):
-        cr = "Crunchyroll Updates: ON"
-    else:
-        cr = "Crunchyroll Updates: OFF"
-    if await (HD.find_one({"_id": int(query[2])})):
-        hd = "Headlines: ON"
-    else:
-        hd = "Headlines: OFF"
-    if await (SG.find_one({"_id": int(query[2])})):
-        sp = "Subsplease Updates: ON"
-    else:
-        sp = "Subsplease Updates: OFF"
-    if query[1]=="sfw":
+        query = cq.data.split("_")
         if await (SFW_GRPS.find_one({"id": int(query[2])})):
-            await SFW_GRPS.find_one_and_delete({"id": int(query[2])})
-            sfw = "NSFW: Allowed"
-        else:
-            await SFW_GRPS.insert_one({"id": int(query[2])})
             sfw = "NSFW: Not Allowed"
-    if query[1]=="notif":
-        if await (AG.find_one({"_id": int(query[2])})):
-            await AG.find_one_and_delete({"_id": int(query[2])})
-            notif = "Airing notifications: OFF"
         else:
-            await AG.insert_one({"_id": int(query[2])})
-            notif = "Airing notifications: ON"
-    if query[1]=="cr":
-        if await (CG.find_one({"_id": int(query[2])})):
-            await CG.find_one_and_delete({"_id": int(query[2])})
-            cr = "Crunchyroll Updates: OFF"
-        else:
-            await CG.insert_one({"_id": int(query[2])})
-            cr = "Crunchyroll Updates: ON"
-    if query[1]=="sp":
-        if await (SG.find_one({"_id": int(query[2])})):
-            await SG.find_one_and_delete({"_id": int(query[2])})
-            sp = "Subsplease Updates: OFF"
-        else:
-            await SG.insert_one({"_id": int(query[2])})
-            sp = "Subsplease Updates: ON"
-    if query[1]=="hd":
-        if await (HD.find_one({"_id": int(query[2])})):
-            await HD.find_one_and_delete({"_id": int(query[2])})
-            hd = "Headlines: OFF"
-        else:
-            await HD.insert_one({"_id": int(query[2])})
-            hd = "Headlines: ON"
-    btns = InlineKeyboardMarkup([
-        [InlineKeyboardButton(text=sfw, callback_data=f"settogl_sfw_{query[2]}")],
-        [InlineKeyboardButton(text=notif, callback_data=f"settogl_notif_{query[2]}")],
-        [InlineKeyboardButton(text=cr, callback_data=f"settogl_cr_{query[2]}")],
-        [InlineKeyboardButton(text=sp, callback_data=f"settogl_sp_{query[2]}")],
-        [InlineKeyboardButton(text=hd, callback_data=f"settogl_hd_{query[2]}")],
-    ])
-    await cq.edit_message_reply_markup(reply_markup=btns)
+            sfw = "NSFW: Allowed"
+        if query[1]=="sfw":
+            if await (SFW_GRPS.find_one({"id": int(query[2])})):
+                await SFW_GRPS.find_one_and_delete({"id": int(query[2])})
+                sfw = "NSFW: Allowed"
+            else:
+                await SFW_GRPS.insert_one({"id": int(query[2])})
+                sfw = "NSFW: Not Allowed"
+        btns = InlineKeyboardMarkup([
+            [InlineKeyboardButton(text=sfw, callback_data=f"settogl_sfw_{query[2]}")],
+        ])
+        await cq.edit_message_reply_markup(reply_markup=btns)
 
 
 @anibot.on_callback_query(filters.regex(pattern=r"myacc_(.*)"))

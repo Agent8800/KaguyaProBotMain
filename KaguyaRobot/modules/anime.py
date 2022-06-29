@@ -8,6 +8,7 @@ import requests
 from telegram.utils.helpers import mention_html
 from KaguyaRobot import OWNER_ID, DRAGONS, REDIS, dispatcher
 from KaguyaRobot.modules.disable import DisableAbleCommandHandler
+from KaguyaRobot.modules.language import gs
 from telegram import (InlineKeyboardButton, InlineKeyboardMarkup, ParseMode,
                       Update)
 from telegram.ext import CallbackContext, CallbackQueryHandler, run_async
