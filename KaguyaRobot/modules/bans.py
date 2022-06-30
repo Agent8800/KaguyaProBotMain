@@ -590,7 +590,6 @@ __help__ = """
  • /tmute <userhandle> x(m/h/d)*:* mutes a user for x time. (via handle, or reply). `m` = `minutes`, `h` = `hours`, `d` = `days`.
  • /unmute <userhandle>*:* unmutes a user. Can also be used as a reply, muting the replied to user.
 """
-__mod_name__ = "Bans/Mutes"
 
 BAN_HANDLER = CommandHandler(["ban", "sban"], ban, run_async=True)
 TEMPBAN_HANDLER = CommandHandler(["tban"], temp_ban, run_async=True)
