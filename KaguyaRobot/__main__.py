@@ -364,7 +364,7 @@ def about_admin(update, context):
             text="""  
   *⤀ Let's make your group bit effective ⤀*
 
-  Congragulations, Yor Robot now ready to manage your group.
+  Congragulations, Kaguya Robot now ready to manage your group.
 
   *Admin Tools*
   Basic Admin tools help you to protect and powerup your group.
@@ -436,7 +436,7 @@ def about_credits(update, context):
             text="""  
   *⤀ Credits for ᴋᴀɢᴜʏᴀ sʜɪɴᴏᴍɪʏᴀ ⬴*
 
-  Here Developers Making And Give Inspiration For Made The Yor Robot""",
+  Here Developers Making And Give Inspiration For Made The Kaguya Robot""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
