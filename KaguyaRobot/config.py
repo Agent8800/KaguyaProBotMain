@@ -14,30 +14,32 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    API_ID = 123456  # integer value, dont use ""
-    API_HASH = "awoo"
-    TOKEN = "BOT_TOKEN"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    ANILIST_CLIENT = 8679
+    ANILIST_SECRET = ND3GWLUHYL3GYYXV7BIXOZMEFLNUQFYU2I24OMMY
+    API_ID = 19733238  # integer value, dont use ""
+    API_HASH = "fe955e75a36ec386ae9ded33061fbd98"
+    TOKEN = "5364041591:AAEBGSGUm8Nm1wke_jSk-jQg0-st2IZ7JiU"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 5148561602  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "Aceadi"
     SUPPORT_CHAT = "NexusXsupport"  # Your own group for support, do not add the @
     JOIN_LOGGER = (
-        -1001180007354
+        -1001504105950
     )  # Prints any new group the bot is added to, prints just the name and ID.
     EVENT_LOGS = (
-        -1001237968047
+        -1001504105950
     )  # Prints information like gbans, sudo promotes, AI enabled disable states that may help in debugging and shit
     ERROR_LOGS = (
-        -1001732618654
+        -1001733372611
     )  # Prints information Error
 
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = "something://somewhat:user@hosturl:port/databasename"  # needed for any database modules
+    SQLALCHEMY_DATABASE_URI = "postgres://auxaocewvksmzb:ac42fac86b5befddaca4d0b9e56790fe401697a9c5e78b5965e3b96b828cd635@ec2-35-172-98-23.compute-1.amazonaws.com:5432/d2k86p87k8j824"  # needed for any database modules
     LOAD = []
     NO_LOAD = ["rss", "cleaner", "connection", "math"]
     WEBHOOK = False
     INFOPIC = True
     URL = None
-    SPAMWATCH_API = ""  # go to support.spamwat.ch to get key
+    SPAMWATCH_API = "3624487efd8e4ca9c949f1ab99654ad1e4de854f41a14afd00f3ca82d808dc8c"  # go to support.spamwat.ch to get key
     SPAMWATCH_SUPPORT_CHAT = "@SpamWatchSupport"
 
     # OPTIONAL
@@ -62,17 +64,18 @@ class Config(object):
     BAN_STICKER = ""  # banhammer marie sticker id, the bot will send this sticker before banning or kicking a user in chat.
     ALLOW_EXCL = True  # Allow ! commands as well as / (Leave this to true so that blacklist can work)
     CASH_API_KEY = (
-        "awoo"  # Get your API key from https://www.alphavantage.co/support/#api-key
+        "-V48U2FLLKRHSVD4X"  # Get your API key from https://www.alphavantage.co/support/#api-key
     )
-    TIME_API_KEY = "awoo"  # Get your API key from https://timezonedb.com/api
+    TIME_API_KEY = "-1CUBX1HXGNHW"  # Get your API key from https://timezonedb.com/api
     WALL_API = (
-        "awoo"  # For wallpapers, get one from https://wall.alphacoders.com/api.php
+        "2455acab48f3a935a8e703e54e26d121"  # For wallpapers, get one from https://wall.alphacoders.com/api.php
     )
     AI_API_KEY = "awoo"  # For chatbot, get one from https://coffeehouse.intellivoid.net/dashboard
     BL_CHATS = []  # List of groups that you want blacklisted.
     SPAMMERS = None
     REM_BG_API_KEY = "xYCR1ZyK3ZsofjH7Y6hPcyzC"
     OPENWEATHERMAP_ID = "887da2c60d9f13fe78b0f9d0c5cbaade"
+    TRIGGERS = / !
 
 
 class Production(Config):
