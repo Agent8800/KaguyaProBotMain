@@ -575,7 +575,7 @@ Examples:
 × /afk*:* away from keyboard
 ×  brb*:* ded in the chat
 *What is that health thingy?*
- Come and see [HP System explained](https://t.me/TeamNexusX/57)
+ Come and see [HP System explained](https://t.me/ShinomiyaUpdates/14)
 """
 
 SET_BIO_HANDLER = DisableAbleCommandHandler("setbio", set_about_bio, run_async=True)
