@@ -14,8 +14,8 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    ANILIST_CLIENT = 8679
-    ANILIST_SECRET = ND3GWLUHYL3GYYXV7BIXOZMEFLNUQFYU2I24OMMY
+    ANILIST_CLIENT = "8679"
+    ANILIST_SECRET = "NeCEq9A1hVnjsjZlTZyNvqK11krQ4HtSliaM7rTN"
     API_ID = 19733238  # integer value, dont use ""
     API_HASH = "fe955e75a36ec386ae9ded33061fbd98"
     TOKEN = ""  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
