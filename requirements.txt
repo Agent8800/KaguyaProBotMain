@@ -65,3 +65,4 @@ tracemoepy
 lottie
 natsort
 html5lib
+yt-dlp
