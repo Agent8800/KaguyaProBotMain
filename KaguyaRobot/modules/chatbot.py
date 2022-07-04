@@ -3,6 +3,7 @@ import re
 import os
 import html
 import requests
+import KaguyaRobot.modules.sql.chatbot_sql as sql
 
 from time import sleep
 from telegram import ParseMode
@@ -17,7 +18,6 @@ from telegram.utils.helpers import mention_html, mention_markdown, escape_markdo
 from KaguyaRobot.modules.helper_funcs.filters import CustomFilters
 from KaguyaRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 from KaguyaRobot import dispatcher, updater, SUPPORT_CHAT
-import KaguyaRobot.modules.sql.chatbot_sql as sql
 from KaguyaRobot.modules.log_channel import gloggable
 from KaguyaRobot.modules.language import gs
 
