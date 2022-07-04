@@ -280,10 +280,9 @@ blacklist_help: |
 chatbot_help: |
     ──「 Chatbot AI 」──
 
-    Kaguya AI is the only ai system which can detect & reply upto 200 language's
+    Kaguya AI is the only ai system with awesome response.
 
-    ❂ /chatbot [ON/OFF]: Enables and disables AI Chat mode.
-    ❂ /chatbot EN : Enables English only chatbot.
+    ❂ /chatbot [: Toggeles the chatbot options
 cleaner_help: |
     ──「 Cleaner 」──
 

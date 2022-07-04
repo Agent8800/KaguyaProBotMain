@@ -18,7 +18,7 @@ from KaguyaRobot.modules.helper_funcs.filters import CustomFilters
 from KaguyaRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 from KaguyaRobot import dispatcher, updater, SUPPORT_CHAT
 from KaguyaRobot.modules.log_channel import gloggable
-
+from KaguyaRobot.modules.language import gs
 
 @user_admin_no_reply
 @gloggable
@@ -135,12 +135,8 @@ def list_all_chats(update: Update, context: CallbackContext):
             sleep(e.retry_after)
     update.effective_message.reply_text(text, parse_mode="HTML")
 
-help = """
-Chatbot utilizes the Kuki's api which allows Kuki to talk and provide a more interactive group chat experience.
-*Admins only Commands*:
-  ➢ /Chatbot*:* Shows chatbot control panel
-*Powered by ItelAi*
-"""
+def helps(chat):
+    return gs(chat, "chatbot_help")
 
 mod_name = "ChatBot"
 
