@@ -139,7 +139,7 @@ def list_all_chats(update: Update, context: CallbackContext):
 def helps(chat):
     return gs(chat, "chatbot_help")
 
-mod_name = "ChatBot"
+__mod_name__ = "ChatBot"
 
 
 CHATBOTK_HANDLER = CommandHandler("chatbot", kuki, run_async=True)
