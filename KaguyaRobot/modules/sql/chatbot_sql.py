@@ -1,14 +1,16 @@
 import threading
+
 from sqlalchemy import Column, String
 from KaguyaRobot.modules.sql import BASE, SESSION
+
 class KukiChats(BASE):
-    tablename = "kuki_chats"
+    __tablename__ = "kuki_chats"
     chat_id = Column(String(14), primary_key=True)
 
-    def init(self, chat_id):
+    def __init__(self, chat_id):
         self.chat_id = chat_id
 
-KukiChats.table.create(checkfirst=True)
+KukiChats.__table__.create(checkfirst=True)
 INSERTION_LOCK = threading.RLock()
 
 
