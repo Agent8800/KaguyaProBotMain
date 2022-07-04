@@ -17,6 +17,7 @@ from telegram.utils.helpers import mention_html, mention_markdown, escape_markdo
 from KaguyaRobot.modules.helper_funcs.filters import CustomFilters
 from KaguyaRobot.modules.helper_funcs.chat_status import user_admin, user_admin_no_reply
 from KaguyaRobot import dispatcher, updater, SUPPORT_CHAT
+import KaguyaRobot.modules.sql.chatbot_sql as sql
 from KaguyaRobot.modules.log_channel import gloggable
 from KaguyaRobot.modules.language import gs
 
@@ -39,7 +40,7 @@ def kukirm(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Boa Hancock Chatbot disable by {}.".format(mention_html(user.id, user.first_name)),
+                "Kaguya Chatbot disable by {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
 
@@ -65,7 +66,7 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Akira Todo Chatbot enable by {}.".format(mention_html(user.id, user.first_name)),
+                "Kaguya Chatbot enable by {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
 
