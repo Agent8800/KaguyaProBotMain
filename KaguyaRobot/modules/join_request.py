@@ -16,7 +16,7 @@ from KaguyaRobot.modules.helper_funcs.decorators import Kaguyacallback
 
 from KaguyaRobot.modules.log_channel import loggable
 
-@user_admin(AdminPerms.CAN_INVITE_USERS, )
+@user_admin
 def chat_join_req(upd: Update, ctx: CallbackContext):
     bot = ctx.bot
     user = upd.chat_join_request.from_user
