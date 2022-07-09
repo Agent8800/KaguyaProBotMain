@@ -14,8 +14,8 @@ from search_engine_parser import GoogleSearch
 from KaguyaRobot import BOT_ID, OWNER_ID, ARQ_API_URL, ARQ_API_KEY
 from KaguyaRobot import pbot
 
-ARQ_API = "POAXBZ-UMQPTD-YKFFPH-AJDLQG-ARQ"
-ARQ_API_KEY = "POAXBZ-UMQPTD-YKFFPH-AJDLQG-ARQ"
+ARQ_API = "VTHEER-VKDGXX-VOMAQR-TTSKAH-ARQ"
+ARQ_API_KEY = "VTHEER-VKDGXX-VOMAQR-TTSKAH-ARQ"
 SUDOERS = OWNER_ID
 ARQ_API_URL = "http://arq.hamker.in"
 
