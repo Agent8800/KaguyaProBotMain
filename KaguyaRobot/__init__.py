@@ -241,9 +241,6 @@ else:
 
 from KaguyaRobot.modules.sql import SESSION
 
-session_name = TOKEN.split(":")[0]
-pgram = Client(session_name, api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
-
 defaults = tg.Defaults(run_async=True)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
