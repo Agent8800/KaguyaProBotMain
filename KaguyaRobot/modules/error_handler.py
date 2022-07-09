@@ -109,7 +109,6 @@ def error_callback(update: Update, context: CallbackContext):
 
         url = f"https://spaceb.in/{response['payload']['id']}"
         context.bot.send_message(
-            chat_id
             ERROR_LOGS,
             text=f"#{context.error.identifier}\n<b>Darling, i have an Error :"
             f"</b>\n<code>{e}</code>",
