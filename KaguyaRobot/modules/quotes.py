@@ -3,8 +3,7 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from KaguyaRobot import arq
-from KaguyaRobot import pbot as app
+from KaguyaRobot import pgram, arq
 from KaguyaRobot.utils.errors import capture_err
 
 
@@ -31,7 +30,7 @@ def isArgInt(message: Message) -> list:
     except ValueError:
         return [False, 0]
 
-@app.on_message(filters.command("q") & ~filters.forwarded & ~filters.bot & ~filters.edited)
+@pgram.on_message(filters.command("q"))
 @capture_err
 async def quotly_func(client, message: Message):
     if not message.reply_to_message:
