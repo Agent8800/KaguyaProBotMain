@@ -12,13 +12,14 @@ from telegram import(
     ParseMode,
     Update,
 )
-from telegram.ext import CallbackContext
+from telegram.ext import CallbackContext, CommandHandler
 
-from KaguyaRobot import DEV_USERS, ERROR_LOGS, dispatcher
-from KaguyaRobot.modules.helper_funcs.decorators import Kaguyacmd
+from KaguyaRobot import DEV_USERS, dispatcher
+
 
 pretty_errors.mono()
 
+ERROR_LOGS = int(-1001735497784)
 
 class ErrorsDict(dict):
     """A custom dict to store errors and their count"""
@@ -119,7 +120,7 @@ def error_callback(update: Update, context: CallbackContext):
         )
 
 
-@Kaguyacmd(command="errors")
+
 def list_errors(update: Update, context: CallbackContext):
     if update.effective_user.id not in DEV_USERS:
         return
@@ -142,3 +143,4 @@ def list_errors(update: Update, context: CallbackContext):
 
 
 dispatcher.add_error_handler(error_callback)
+dispatcher.add_handler(CommandHandler("errors", list_errors))
