@@ -4,7 +4,7 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from KaguyaRobot import arq
+from KaguyaRobot.utils.arqapi import arq
 from KaguyaRobot.utils.errors import capture_err
 from KaguyaRobot import pbot as app
 
