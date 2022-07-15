@@ -1,1 +1,1 @@
-worker: python3 -m KaguyaRoBot
+worker: python3 -m KaguyaRobot
