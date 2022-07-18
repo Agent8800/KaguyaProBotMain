@@ -4,7 +4,7 @@ bleach==5.0.0
 numpy
 img2pdf
 ffmpeg-python==0.2.0
-redis==4.3.4
+redis==3.5.3
 aioredis==2.0.1
 hiredis==2.0.0
 Python_ARQ
@@ -35,7 +35,7 @@ search-engine-parser
 SQLAlchemy==1.4.36
 opencv-python-headless==4.6.0.66
 jikanpy==4.3.2
-emoji==2.0.0
+emoji==1.7.0
 markdown2==2.4.3
 wikipedia==1.4.0
 alphabet-detector==0.0.7
