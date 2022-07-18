@@ -4,7 +4,7 @@ bleach==5.0.0
 numpy
 img2pdf
 ffmpeg-python==0.2.0
-redis==3.5.3
+redis==4.3.4
 aioredis==2.0.1
 hiredis==2.0.0
 Python_ARQ
