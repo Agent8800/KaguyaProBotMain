@@ -327,10 +327,6 @@ def Kaguya_about_callback(update, context):
                     InlineKeyboardButton(text="ᴀᴅᴍɪɴs", callback_data="admin_"),
                     InlineKeyboardButton(text="ɴᴏᴛᴇs", callback_data="about_notes"),
                  ],
-                 [
-                    InlineKeyboardButton(text="ꜱᴜᴘᴘᴏʀᴛ", url="t.me/ShinomiyaSupport"),
-                    InlineKeyboardButton(text="ᴄʀᴇᴅɪᴛs", callback_data="about_credits"),
-                 ],
                  [ 
                     InlineKeyboardButton(text=" ʜᴇʟᴘ", callback_data="help_back"),
                  ],
