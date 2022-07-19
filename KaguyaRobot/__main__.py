@@ -235,7 +235,7 @@ reply_markup=InlineKeyboardMarkup(
                     [
                         [
                             InlineKeyboardButton(
-                                "sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/ShinomiyaSupport"),
+                                "sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/NexusXSupport"),
                             InlineKeyboardButton(
                                 "ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/ShinomiyaUpdates")
                         ],
