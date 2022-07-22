@@ -85,10 +85,10 @@ PM_START_TEXT = """
 ────「 [Kaguya Shinomiya]({}) 」────
 やあ *"O Kawaii Koto" {} - San!*
 *I'm Vice-President Of Council Here To Manage Your Group With Useful & Advanced Features.*
-
+────────────────────────
 ❍ *Version* : 3.10.6
 ❍ *Council Uptime* : {}
-
+────────────────────────
 ➢ *Try The More Options Buttons Below To See The Available Commands* ××
 """
 
