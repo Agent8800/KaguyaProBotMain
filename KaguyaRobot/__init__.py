@@ -19,9 +19,14 @@ from pyrogram.types import Message
 from pyrogram import Client, errors
 from pyrogram.errors.exceptions.bad_request_400 import PeerIdInvalid, ChannelInvalid
 from pyrogram.types import Chat, User
+from KaguyaRobot.services.quoteapi import Quotly
 from ptbcontrib.postgres_persistence import PostgresPersistence
 
 StartTime = time.time()
+
+#--------------------#
+quotly = Quotly()
+#--------------------#
 
 def get_user_list(__init__, key):
     with open("{}/KaguyaRobot/{}".format(os.getcwd(), __init__), "r") as json_file:
