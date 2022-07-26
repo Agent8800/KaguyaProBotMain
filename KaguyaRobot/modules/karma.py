@@ -140,7 +140,7 @@ async def downvote(_, message):
     )
 
 
-@app.on_message(filters.command("karmastat") & filters.group)
+@app.on_message(filters.command("karmastat") & filters.group & ~filters.edited)
 @capture_err
 async def karma(_, message):
     chat_id = message.chat.id
