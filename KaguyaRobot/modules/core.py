@@ -22,7 +22,7 @@ async def Prof(event):
     message_id = event.message.id
     input_str = event.pattern_match.group(1)
     the_plugin_file = "./KaguyaRobot/modules/{}.py".format(input_str)
-    if os.path.exists(the_plugin_file):
+    if os.path.exists(the_plugin_file): #huff
      message_id = event.message.id
      await event.client.send_file(
              event.chat_id,
