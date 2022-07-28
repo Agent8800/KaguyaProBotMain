@@ -59,17 +59,17 @@
          "value": ""  
       },  
       "DATABASE_URL": {
-         "description": "Db Url,
+         "description": "Db Url",
          "required": true,
          "value": ""  
       },
       "TRIGGERS": {
-         "description": "Db Url,
+         "description": "Db Url",
          "required": true,
          "value": "/ !"  
       },   
       "DOWN_PATH": {
-         "description": "Down path anilist,
+         "description": "Down path anilist",
          "required": true,
          "value": "anibot/downloads/"  
       },   
