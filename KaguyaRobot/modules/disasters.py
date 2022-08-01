@@ -561,6 +561,8 @@ SUPPORTLIST_HANDLER = CommandHandler(
 )
 SUDOLIST_HANDLER = CommandHandler(["sudolist", "emperor"], sudolist, run_async=True)
 DEVLIST_HANDLER = CommandHandler(["devlist", "kingdom"], devlist, run_async=True)
+SUPPORTLIST_HANDLER = CommandHandler(["demonlist", "knights"], devlist, run_async=True)
+
 
 dispatcher.add_handler(SUDO_HANDLER)
 dispatcher.add_handler(SUPPORT_HANDLER)
