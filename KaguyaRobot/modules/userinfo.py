@@ -444,27 +444,35 @@ def set_about_me(update: Update, context: CallbackContext):
             )
 
 @sudo_plus
-def stats(update: Update, context: CallbackContext):
-    stats = "<b>╔═━「 Current Kaguya Statistics 」</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
-    result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
+def stats(update, context):
+    uptime = datetime.datetime.fromtimestamp(boot_time()).strftime("%Y-%m-%d %H:%M:%S")
+    botuptime = get_readable_time((time.time() - StartTime))
+    status = "*╒═══「 System statistics 」*\n\n"
+    status += "*➢ System Start time:* " + str(uptime) + "\n"
+    uname = platform.uname()
+    status += "*➢ System:* " + str(uname.system) + "\n"
+    status += "*➢ Node name:* " + escape_markdown(str(uname.node)) + "\n"
+    status += "*➢ Release:* " + escape_markdown(str(uname.release)) + "\n"
+    status += "*➢ Machine:* " + escape_markdown(str(uname.machine)) + "\n"
+    mem = virtual_memory()
+    cpu = cpu_percent()
+    disk = disk_usage("/")
+    status += "*➢ CPU:* " + str(cpu) + " %\n"
+    status += "*➢ RAM:* " + str(mem[2]) + " %\n"
+    status += "*➢ Storage:* " + str(disk[3]) + " %\n\n"
+    status += "*➢ Python Version:* " + python_version() + "\n"
+    status += "*➢ python-Telegram-Bot:* " + str(ptbver) + "\n"
+    status += "*➢ Uptime:* " + str(botuptime) + "\n"
     try:
         update.effective_message.reply_photo(
-            Kaguya_IMG,
+            KAGUYA_IMG,
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
             + f"\n\n[Support](https://t.me/{SUPPORT_CHAT}) | [Updates](https://t.me/ShinomiyaUpdates)\n\n"
-            + "\n╘══「 by [The Kaizuryu](https://t.me/TeamNexusX) 」\n",
+            + "\n╘══「 by [TTeam NexusX](https://t.me/TeamNexusX) 」\n",
             parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                  [                  
-                       InlineKeyboardButton(
-                             text="Repo",
-                             url="t.me/NexusXSupport")
-                     ] 
-                ]
-            ),
+           
         )
     except BaseException:
         update.effective_message.reply_text(
@@ -476,17 +484,10 @@ def stats(update: Update, context: CallbackContext):
                     )
                     + f"\n\n[Support](https://t.me/{SUPPORT_CHAT}) | [Updates](https://t.me/ShinomiyaUpdates)\n\n"
                 )
-                + "╘══「 by [TeamNexusX](https://t.me/TeamNexusX) 」\n"
+                + "╘══「 by [Team NexusX](https://t.me/TeamNexusX) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                  [                  
-                       InlineKeyboardButton(
-                             text="Repo",
-                             url="t.me/NexusXSupport")
-                     ] 
-                ]
+            
             ),
         )
         
