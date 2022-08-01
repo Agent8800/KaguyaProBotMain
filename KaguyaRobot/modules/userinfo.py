@@ -43,6 +43,8 @@ from KaguyaRobot.modules.helper_funcs.chat_status import sudo_plus
 from KaguyaRobot.modules.helper_funcs.extraction import extract_user
 from KaguyaRobot import telethn
 
+Kaguya_Img = "https://telegra.ph/file/ee56b80c94eebb382150b.jpg"
+
 def no_by_per(totalhp, percentage):
     """
     rtype: num of `percentage` from total
@@ -465,7 +467,7 @@ def stats(update, context):
     status += "*➢ Uptime:* " + str(botuptime) + "\n"
     try:
         update.effective_message.reply_photo(
-            KAGUYA_IMG,
+            Kaguya_IMG,
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
