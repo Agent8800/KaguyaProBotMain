@@ -371,9 +371,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Health", url="https://t.me/KennedyProject/44"),
+                                "Health", url="https://t.me/ShinomiyaUpdates/14"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/KennedyProject/43")
+                                "Disaster", url="https://t.me/ShinomiyaUpdates/10")
                         ],
                     ]
                 ),
@@ -447,12 +447,48 @@ def set_about_me(update: Update, context: CallbackContext):
 def stats(update: Update, context: CallbackContext):
     stats = "<b>╔═━「 Current Kaguya Statistics 」</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
-    result += "\n<b>╘═━「 Powered By Hellsing 」</b>"
-    update.effective_message.reply_text(
-        result,
-        parse_mode=ParseMode.HTML, 
-        disable_web_page_preview=True
-   )
+    try:
+        update.effective_message.reply_photo(
+            Kaguya_IMG,
+            status
+            + "\n*Bot statistics*:\n"
+            + "\n".join([mod.__stats__() for mod in STATS])
+            + f"\n\n[Support](https://t.me/{SUPPORT_CHAT}) | [Updates](https://t.me/ShinomiyaUpdates)\n\n"
+            + "\n╘══「 by [The Kaizuryu](https://t.me/TeamNexusX) 」\n",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [                  
+                       InlineKeyboardButton(
+                             text="Repo",
+                             url="t.me/NexusXSupport")
+                     ] 
+                ]
+            ),
+        )
+    except BaseException:
+        update.effective_message.reply_text(
+            (
+                (
+                    (
+                        "\n*Bot statistics*:\n"
+                        + "\n".join(mod.__stats__() for mod in STATS)
+                    )
+                    + f"\n\n[Support](https://t.me/{SUPPORT_CHAT}) | [Updates](https://t.me/ShinomiyaUpdates)\n\n"
+                )
+                + "╘══「 by [TeamNexusX](https://t.me/TeamNexusX) 」\n"
+            ),
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [                  
+                       InlineKeyboardButton(
+                             text="Repo",
+                             url="t.me/NexusXSupport")
+                     ] 
+                ]
+            ),
+        )
         
         
 def about_bio(update: Update, context: CallbackContext):
