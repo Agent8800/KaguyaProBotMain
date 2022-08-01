@@ -467,12 +467,12 @@ def stats(update, context):
     status += "*➢ Uptime:* " + str(botuptime) + "\n"
     try:
         update.effective_message.reply_photo(
-            Kaguya_IMG,
+            Kaguya_Img,
             status
             + "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
             + f"\n\n[Support](https://t.me/{SUPPORT_CHAT}) | [Updates](https://t.me/ShinomiyaUpdates)\n\n"
-            + "\n╘══「 by [TTeam NexusX](https://t.me/TeamNexusX) 」\n",
+            + "\n╘══「 by [Team NexusX](https://t.me/TeamNexusX) 」\n",
             parse_mode=ParseMode.MARKDOWN,
            
         )
