@@ -255,7 +255,7 @@ aiohttpsession = ClientSession()
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-pbot = Client('KaguyaBot', api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN, plugins=dict(root="KaguyaRobot/pyrogramee"))
+pbot = Client('KaguyaBot', api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 apps = []
 apps.append(pbot)
 loop = asyncio.get_event_loop()
