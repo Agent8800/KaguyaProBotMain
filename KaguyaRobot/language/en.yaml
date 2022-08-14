@@ -807,7 +807,21 @@ webshot_help: |
     ──「 WebSs 」──
     ❂ `/webss`*:* <url> to get screen shot of any website
     ❂ this module is used for fetching ss from a website
-    ❂ for example : /webss <url>    
+    ❂ for example : /webss <url>
+encrypt_help: | 
+    ──「 Encrypt/Decrypt 」──
+    Here is the help for encrypt module:
+    ❂/encrypt <Your Text>:To encrypt your text
+    ❂/encrypt (reply a massage):To encrypt your text
+    ❂/decrypt <reply to the text given by bot>:To decrypt your text
+
+
+    Example :
+    `/encrypt Kaguya`
+    Output: Qgm Dg
+
+    `/decrypt Qgm Dg`
+    Output: Kaguya    
     
 
 # Admin.py Variabel Text
