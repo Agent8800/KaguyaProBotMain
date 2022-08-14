@@ -28,7 +28,7 @@ async def hmm(event):
     k = secureme.decrypt(Text)
     await event.reply(k)
 
-    def helps(chat):
+def helps(chat):
     return gs(chat, "encrypt_help")
-
+    
 __mod_name__ = "Encrypt"
