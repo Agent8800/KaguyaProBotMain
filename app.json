@@ -1,5 +1,5 @@
 {
-      "name": "Siesta Robot",
+      "name": "Kaguya Robot",
       "description": "A Powerful Telegram group management bot with anime theme.",
       "keywords": [
          "telegram",
@@ -9,8 +9,8 @@
          "naorobot"
       ],
     
-   "logo":    "https://telegra.ph/file/566d0f3fb2107bd8ecb27.jpg",  
-   "repository": "https://github.com/shiinobu/https://github.com/shiinobu/SiestaRobot",
+   "logo":    "https://telegra.ph/file/ee56b80c94eebb382150b.jpg",  
+   "repository": "https://github.com/Zomroo/KaguyaProBotMain",
    "addons": [
           {
          "options": {
