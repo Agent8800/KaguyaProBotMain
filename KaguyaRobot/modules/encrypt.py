@@ -31,4 +31,4 @@ async def hmm(event):
 def helps(chat):
     return gs(chat, "encrypt_help")
     
-__mod_name__ = "Encrypt"
+__mod_name__ = "Encrypt/Decrypt"
