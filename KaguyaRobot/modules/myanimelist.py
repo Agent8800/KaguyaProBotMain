@@ -1,7 +1,8 @@
-# Module to get info about anime, characters, manga etc. by @TheRealPhoenix
+# Module to get info about anime, characters, manga etc. by @Aceladi
 
 from jikanpy import Jikan
 from jikanpy.exceptions import APIException
+from KaguyaRobot.modules.language import gs
 
 from telegram import (
     Message,
@@ -187,6 +188,8 @@ def manga(update: Update, context: CallbackContext):
             rep, parse_mode=ParseMode.HTML, reply_markup=InlineKeyboardMarkup(keyb)
         )
 
+def helps(chat):
+    return gs(chat, "Mal_help")
 
 __mod_name__ = "MyAnimeList"
 
