@@ -794,6 +794,21 @@ warns_help: |
     ❂ /nowarn <keyword>: stop a warning filter
     ❂ /warnlimit <num>: set the warning limit
     ❂ /strongwarn <on/yes/off/no>: If set to on, exceeding the warn limit will result in a ban. Else, will just punch.
+Mal_help:  |
+    ──「 My Anime List 」──
+     Here is the help for the MyAnimeList📝 module:
+     Get information about anime, manga or characters with the help of this module! All data is fetched from [MyAnimeList](https://myanimelist.net/).
+       Available commands:
+    ❂ /manime <anime>: returns information about the anime.
+    ❂ /mcharacter <character>: returns information about the character.
+    ❂ /mmanga <manga>: returns information about the manga.
+    ❂ /mupcoming: returns a list of new anime in the upcoming seasons.
+webshot_help: | 
+    ──「 WebSs 」──
+    ❂ `/webss`*:* <url> to get screen shot of any website
+    ❂ this module is used for fetching ss from a website
+    ❂ for example : /webss <url>    
+    
 
 # Admin.py Variabel Text
 user_change_info: "You're missing rights to change chat info!"
