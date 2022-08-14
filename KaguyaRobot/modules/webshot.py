@@ -22,16 +22,7 @@ from pyrogram.types import Message
 
 from KaguyaRobot import pbot as app
 from KaguyaRobot.utils.errors import capture_err
-
-__help__ = """
-
-  ──「 WEBSHOT 」──
-  
-• `/webss`*:* <url> to get screen shot of any website
-• this module is used for fetching ss from a website
-• for example : /webss <url>
-"""
-__mod_name__ = "Webshot"
+from KaguyaRobot.modules.language import gs
 
 
 @app.on_message(filters.command("webss"))
@@ -55,3 +46,9 @@ async def take_ss(_, message: Message):
         await m.delete()
     except Exception as e:
         await message.reply_text(str(e))
+        
+def helps(chat):
+    return gs(chat, "webshot_help")
+
+__mod_name__ = "WebShot"        
+       
