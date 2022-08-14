@@ -2,6 +2,7 @@ from KaguyaRobot import telethn as tbot
 import os
 from KaguyaRobot.events import register
 import secureme
+from KaguyaRobot.modules.language import gs
 
 
 @register(pattern="^/encrypt ?(.*)")
@@ -26,3 +27,8 @@ async def hmm(event):
     Text = ok
     k = secureme.decrypt(Text)
     await event.reply(k)
+
+    def helps(chat):
+    return gs(chat, "encrypt_help")
+
+__mod_name__ = "WebShot"
