@@ -59,7 +59,6 @@ youtube_search
 youtube-search-python
 gitpython
 youtube_dl
-pgram
 
 #ANIBOT
 tracemoepy
