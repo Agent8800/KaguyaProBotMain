@@ -7,7 +7,6 @@ import asyncio
 import time
 import spamwatch
 import telegram.ext as tg
-import pgram
 
 from inspect import getfullargspec
 from redis import StrictRedis
