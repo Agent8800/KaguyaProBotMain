@@ -92,8 +92,12 @@ PM_START_TEXT = """
 ➢ *Try The More Options Buttons Below To See The Available Commands* ××
 """
 
-PHOTO = "https://telegra.ph/file/2023d7c4a27551deaf8fa.jpg"
-
+PHOTO = (
+      "https://telegra.ph/file/2023d7c4a27551deaf8fa.jpg",
+      "https://telegra.ph/file/02ff19d802c4ce367dd1c.jpg",
+      "https://telegra.ph/file/0e2064896320536b65aae.jpg",
+      "https://telegra.ph/file/d672c58395ee98b82394e.jpg",
+)
 
 buttons = [
     [
@@ -215,16 +219,15 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_photo(
-                PHOTO,
-                PM_START_TEXT.format(
-                    escape_markdown(first_name),
+            update.effective_message.reply_text(
+                PM_START_TEXT.format(random.choice(PHOTO),escape_markdown(first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
                     sql.num_chats()),                        
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
+                disable_web_page_preview=False,
             )
     else:
         update.effective_message.reply_text("[Kon'ichiwa Am Kaguya Shinomiya I'll Protect You From The Guilty](https://telegra.ph/file/02ff19d802c4ce367dd1c.jpg)",
@@ -865,10 +868,9 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.send_photo(
+            dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                "https://telegra.ph/file/2225153fd8b747a9edeae.jpg",
-                "Am Back to my job",
+                f"""[Am Back to my job](https://telegra.ph/file/2225153fd8b747a9edeae.jpg)""",
                 parse_mode=ParseMode.MARKDOWN,
 
             reply_markup=InlineKeyboardMarkup(
