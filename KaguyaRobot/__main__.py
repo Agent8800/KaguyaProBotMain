@@ -873,7 +873,7 @@ def main():
             dispatcher.bot.send_photo(
                 f"@{SUPPORT_CHAT}", 
                 f"Am Back to my job",
-                f"https://telegra.ph/file/2225153fd8b747a9edeae.jpg"
+                f"https://telegra.ph/file/2225153fd8b747a9edeae.jpg",
                 parse_mode=ParseMode.MARKDOWN,
 
             reply_markup=InlineKeyboardMarkup(
