@@ -219,8 +219,10 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
-                PM_START_TEXT.format(random.choice(PHOTO),escape_markdown(first_name),
+            update.effective_message.reply_photo(
+                photo=(PHOTO),
+                caption=PM_START_TEXT.format(
+                    escape_markdown(first_name),
                     escape_markdown(uptime),
                     sql.num_users(),
                     sql.num_chats()),                        
@@ -868,9 +870,10 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(
+            dispatcher.bot.send_photo(
                 f"@{SUPPORT_CHAT}", 
-                f"""[Am Back to my job](https://telegra.ph/file/2225153fd8b747a9edeae.jpg)""",
+                f"Am Back to my job",
+                f"https://telegra.ph/file/2225153fd8b747a9edeae.jpg"
                 parse_mode=ParseMode.MARKDOWN,
 
             reply_markup=InlineKeyboardMarkup(
