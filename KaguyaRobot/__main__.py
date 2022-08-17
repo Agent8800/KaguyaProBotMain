@@ -92,12 +92,8 @@ PM_START_TEXT = """
 ➢ *Try The More Options Buttons Below To See The Available Commands* ××
 """
 
-PHOTO = (
-      "https://telegra.ph/file/2023d7c4a27551deaf8fa.jpg",
-      "https://telegra.ph/file/02ff19d802c4ce367dd1c.jpg",
-      "https://telegra.ph/file/0e2064896320536b65aae.jpg",
-      "https://telegra.ph/file/d672c58395ee98b82394e.jpg",
-)
+PHOTO = "https://telegra.ph/file/2023d7c4a27551deaf8fa.jpg"
+
 
 buttons = [
     [
