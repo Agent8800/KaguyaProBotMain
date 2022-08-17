@@ -229,7 +229,6 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
-                disable_web_page_preview=False,
             )
     else:
         update.effective_message.reply_text("[Kon'ichiwa Am Kaguya Shinomiya I'll Protect You From The Guilty](https://telegra.ph/file/02ff19d802c4ce367dd1c.jpg)",
