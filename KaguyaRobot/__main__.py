@@ -871,7 +871,7 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
-                "@{SUPPORT_CHAT}", 
+                f"@{SUPPORT_CHAT}", 
                 "https://telegra.ph/file/2225153fd8b747a9edeae.jpg",
                 "Am Back to my job",
                 parse_mode=ParseMode.MARKDOWN,
