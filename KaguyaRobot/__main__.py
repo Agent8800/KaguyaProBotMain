@@ -892,7 +892,7 @@ def migrate_chats(update: Update, context: CallbackContext):
             ),
 
         )
-        )
+        
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
