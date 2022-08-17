@@ -348,8 +348,8 @@ def info(update: Update, context: CallbackContext):
             _file = bot.get_file(profile["file_id"])
             _file.download(f"{user.id}.png")
 
-            message.reply_document(
-                document=open(f"{user.id}.png", "rb"),
+            message.reply_photo(
+                photo=profile,
                 caption=(text),
                 reply_markup=InlineKeyboardMarkup(
                     [
