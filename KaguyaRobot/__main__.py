@@ -864,12 +864,13 @@ def migrate_chats(update: Update, context: CallbackContext):
     raise DispatcherHandlerStop
 
 
+def main():
+
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.send_photo(
+            dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                "https://telegra.ph/file/2225153fd8b747a9edeae.jpg",
-                "Am Back to my job",
+                f"""[Am Back to my job](https://telegra.ph/file/2225153fd8b747a9edeae.jpg)""",
                 parse_mode=ParseMode.MARKDOWN,
 
             reply_markup=InlineKeyboardMarkup(
@@ -892,7 +893,6 @@ def migrate_chats(update: Update, context: CallbackContext):
             ),
 
         )
-        
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!")
