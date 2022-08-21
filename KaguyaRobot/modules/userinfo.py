@@ -137,48 +137,6 @@ def make_bar(per):
     return "■" * done + "□" * (10 - done)
 
 
-def get_id(update: Update, context: CallbackContext):
-    bot, args = context.bot, context.args
-    message = update.effective_message
-    chat = update.effective_chat
-    msg = update.effective_message
-    user_id = extract_user(msg, args)
-
-    if user_id:
-
-        if msg.reply_to_message and msg.reply_to_message.forward_from:
-
-            user1 = message.reply_to_message.from_user
-            user2 = message.reply_to_message.forward_from
-
-            msg.reply_text(
-                f"<b>Telegram ID:</b>\n"
-                f"• {html.escape(user2.first_name)} - <code>{user2.id}</code>.\n"
-                f"• {html.escape(user1.first_name)} - <code>{user1.id}</code>.",
-                parse_mode=ParseMode.HTML,
-            )
-
-        else:
-
-            user = bot.get_chat(user_id)
-            msg.reply_text(
-                f"{html.escape(user.first_name)}'s id is <code>{user.id}</code>.",
-                parse_mode=ParseMode.HTML,
-            )
-
-    elif chat.type == "private":
-        msg.reply_text(
-            f"Your id is <code>{chat.id}</code>.",
-            parse_mode=ParseMode.HTML,
-        )
-
-    else:
-        msg.reply_text(
-            f"This group's id is <code>{chat.id}</code>.",
-            parse_mode=ParseMode.HTML,
-        )
-
-
 @telethn.on(
     events.NewMessage(
         pattern="/ginfo ", from_users=(TIGERS or []) + (DRAGONS or []) + (DEMONS or []),
