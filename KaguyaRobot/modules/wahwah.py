@@ -9,7 +9,7 @@ def parse_com(com, key):
   r = (r.split(" ", 1)[1] if len(r.split()) >= 1 else None)
   return r
 
-@bot.on_message(get_command('id'))
+@bot.on_message(filters.command('id'))
 async def ids(_,message):
   if message.reply_to_message:
     user = message.reply_to_message.from_user.id
