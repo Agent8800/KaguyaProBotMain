@@ -27,6 +27,6 @@ async def ids(_,message):
     reply = await bot.get_users(user)
     await message.reply_text(f"**Your ID**: `{message.from_user.id}`\n**{reply.first_name}'s ID**: `{reply.id}`\n**{message.chat.title}'s ID**: `{message.chat.id}`")
   else:
-    await message.reply(f"**Your ID**: `{message.from_user.id}`\n**{message.chat.title}'s ID**: `{message.chat.id}`")
+    await message.reply(f"**Your ID**: `{message.from_user.id}`\n**{message.chat.title}'s \n His Id**:`{message.reply_to_message.forward_from} ID**: `{message.chat.id}`")
 
 #RyuSenpaiX is op
