@@ -1,12 +1,13 @@
-import html
-import asyncio 
-from pyrogram.errors.exceptions.flood_420 import FloodWait
-from pyrogram import filters
 from KaguyaRobot import pbot as bot
+from pyrogram import filters             
 
-import logging
-
-                
+def parse_com(com, key):
+  try:
+    r = com.split(key,1)[1]
+  except KeyError:
+    return None
+  r = (r.split(" ", 1)[1] if len(r.split()) >= 1 else None)
+  return r
 
 bot.on_message(filters.command("id"))
 async def getid(client, message):
