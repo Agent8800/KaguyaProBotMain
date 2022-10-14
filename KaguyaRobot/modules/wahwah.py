@@ -1,6 +1,5 @@
 import html
 import asyncio
-from pyrogram import 
 from pyrogram.raw.types import 
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 from KaguyaRobot import pgram
