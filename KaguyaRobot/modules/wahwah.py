@@ -1,16 +1,17 @@
 import html
 import asyncio
-from pyrogram import *
-from pyrogram.raw.types import *
+from pyrogram import 
+from pyrogram.raw.types import 
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 from KaguyaRobot import pgram
 from pyrogram import filters
+from KaguyaRobot import pbot as bot
 
 import logging
 
                 
 
-@pgram.on_message(filters.command("id"))
+bot.on_message(filters.command("id"))
 async def getid(client, message):
     chat = message.chat
     your_id = message.from_user.id
