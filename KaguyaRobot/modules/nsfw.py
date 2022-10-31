@@ -22,3 +22,12 @@ def hneko(update: Update, context: CallbackContext):
 
 hneko_handler = CommandHandler("hneko", hneko)
 dispatcher.add_handler(hneko_handler)
+
+def kiss(update: Update, context: CallbackContext):
+    m = update.effective_message
+    api = requests.get("https://api.waifu.pics/sfw/kiss").json()
+    url = api["url"]
+    m.reply_photo(url)
+
+kiss_handler = CommandHandler("kiss", kiss)
+dispatcher.add_handler(kiss_handler)
