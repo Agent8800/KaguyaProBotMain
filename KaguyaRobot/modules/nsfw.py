@@ -50,7 +50,14 @@ def megumin(update: Update, context: CallbackContext):
 megumin_handler = CommandHandler("megumin", megumin)
 dispatcher.add_handler(megumin_handler)
 
+def awoo(update: Update, context: CallbackContext):
+    m = update.effective_message
+    api = requests.get("https://api.waifu.pics/sfw/awoo").json()
+    url = api["url"]
+    m.reply_photo(url)
 
+awoo_handler = CommandHandler("awoo", awoo)
+dispatcher.add_handler(awoo_handler)
 
 #Gif
 
@@ -102,14 +109,6 @@ def cry(update: Update, context: CallbackContext):
 cry_handler = CommandHandler("cry", cry)
 dispatcher.add_handler(cry_handler)
 
-def awoo(update: Update, context: CallbackContext):
-    m = update.effective_message
-    api = requests.get("https://api.waifu.pics/sfw/awoo").json()
-    url = api["url"]
-    m.reply_animation(animation=url)
-
-awoo_handler = CommandHandler("awoo", awoo)
-dispatcher.add_handler(awoo_handler)
 
 def kiss(update: Update, context: CallbackContext):
     m = update.effective_message
