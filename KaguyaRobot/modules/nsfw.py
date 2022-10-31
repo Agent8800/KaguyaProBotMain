@@ -20,5 +20,5 @@ def hneko(update: Update):
     url = api["url"]
     m.reply_photo(url)
 
-hneko_handler = CommandHandler("hneko", hneko, run_async=True)
+hneko_handler = CommandHandler("hneko", hneko)
 dispatcher.add_handler(hneko_handler)
