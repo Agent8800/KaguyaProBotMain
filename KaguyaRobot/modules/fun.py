@@ -394,7 +394,7 @@ def goodmorning(update, context):
 
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize, run_async=True)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs, run_async=True)
-TSLAP_HANDLER = DisableAbleCommandHandler("tslap", slap, run_async=True)
+TSLAP_HANDLER = DisableAbleCommandHandler("tslap", tslap, run_async=True)
 PAT_HANDLER = DisableAbleCommandHandler("pat", pat, run_async=True)
 ROLL_HANDLER = DisableAbleCommandHandler("roll", roll, run_async=True)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss, run_async=True)
