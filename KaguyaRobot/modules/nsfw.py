@@ -14,14 +14,48 @@ from KaguyaRobot.modules.helper_funcs.filters import CustomFilters
 from KaguyaRobot.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
-def hneko(update: Update, context: CallbackContext):
+def neko(update: Update, context: CallbackContext):
     m = update.effective_message
-    api = requests.get("https://api.waifu.pics/nsfw/neko").json()
+    api = requests.get("https://api.waifu.pics/sfw/neko").json()
     url = api["url"]
     m.reply_photo(url)
 
-hneko_handler = CommandHandler("hneko", hneko)
-dispatcher.add_handler(hneko_handler)
+neko_handler = CommandHandler("neko", neko)
+dispatcher.add_handler(neko_handler)
+
+def waifu(update: Update, context: CallbackContext):
+    m = update.effective_message
+    api = requests.get("https://api.waifu.pics/sfw/waifu").json()
+    url = api["url"]
+    m.reply_photo(url)
+
+waifu_handler = CommandHandler("waifu", waifu)
+dispatcher.add_handler(waifu_handler)
+
+def shinobu(update: Update, context: CallbackContext):
+    m = update.effective_message
+    api = requests.get("https://api.waifu.pics/sfw/shinobu").json()
+    url = api["url"]
+    m.reply_photo(url)
+
+shinobu_handler = CommandHandler("shinobu", shinobu)
+dispatcher.add_handler(shinobu_handler)
+
+def megumin(update: Update, context: CallbackContext):
+    m = update.effective_message
+    api = requests.get("https://api.waifu.pics/sfw/megumin").json()
+    url = api["url"]
+    m.reply_photo(url)
+
+megumin_handler = CommandHandler("megumin", megumin)
+dispatcher.add_handler(megumin_handler)
+
+
+
+#Gif
+
+
+
 
 def kiss(update: Update, context: CallbackContext):
     m = update.effective_message
