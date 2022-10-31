@@ -34,7 +34,7 @@ dispatcher.add_handler(kiss_handler)
 
 def bully(update: Update, context: CallbackContext):
     m = update.effective_message
-    api = requests.get("https://api.bully.pics/sfw/bully").json()
+    api = requests.get("https://api.waifu.pics/sfw/bully").json()
     url = api["url"]
     m.reply_animation(animation=url)
 
@@ -43,7 +43,7 @@ dispatcher.add_handler(bully_handler)
 
 def cuddle(update: Update, context: CallbackContext):
     m = update.effective_message
-    api = requests.get("https://api.cuddle.pics/sfw/cuddle").json()
+    api = requests.get("https://api.waifu.pics/sfw/cuddle").json()
     url = api["url"]
     m.reply_animation(animation=url)
 
@@ -52,7 +52,7 @@ dispatcher.add_handler(cuddle_handler)
 
 def hug(update: Update, context: CallbackContext):
     m = update.effective_message
-    api = requests.get("https://api.hug.pics/sfw/hug").json()
+    api = requests.get("https://api.waifu.pics/sfw/hug").json()
     url = api["url"]
     m.reply_animation(animation=url)
 
@@ -61,7 +61,7 @@ dispatcher.add_handler(hug_handler)
 
 def cry(update: Update, context: CallbackContext):
     m = update.effective_message
-    api = requests.get("https://api.cry.pics/sfw/cry").json()
+    api = requests.get("https://api.waifu.pics/sfw/cry").json()
     url = api["url"]
     m.reply_animation(animation=url)
 
@@ -70,7 +70,7 @@ dispatcher.add_handler(cry_handler)
 
 def awoo(update: Update, context: CallbackContext):
     m = update.effective_message
-    api = requests.get("https://api.awoo.pics/sfw/awoo").json()
+    api = requests.get("https://api.waifu.pics/sfw/awoo").json()
     url = api["url"]
     m.reply_animation(animation=url)
 
