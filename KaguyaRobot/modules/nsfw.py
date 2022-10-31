@@ -1,7 +1,7 @@
 import requests
 
 from telegram import Update
-from .. import dispatcher
+from import dispatcher
 
 def hneko(update: Update):
     m = update.effective_message
