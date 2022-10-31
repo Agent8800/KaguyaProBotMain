@@ -18,7 +18,7 @@ def hneko(update: Update, context: CallbackContext):
     m = update.effective_message
     api = requests.get("https://api.waifu.pics/nsfw/neko").json()
     url = api["url"]
-    m.reply_photo(url)
+    m.reply_animation(animation=url)
 
 hneko_handler = CommandHandler("hneko", hneko)
 dispatcher.add_handler(hneko_handler)
@@ -27,7 +27,7 @@ def kiss(update: Update, context: CallbackContext):
     m = update.effective_message
     api = requests.get("https://api.waifu.pics/sfw/kiss").json()
     url = api["url"]
-    m.reply_photo(url)
+    m.reply_animation(animation=url)
 
 kiss_handler = CommandHandler("kiss", kiss)
 dispatcher.add_handler(kiss_handler)
