@@ -14,7 +14,7 @@ from KaguyaRobot.modules.helper_funcs.filters import CustomFilters
 from KaguyaRobot.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
-def hneko(update: Update):
+def hneko(update: Update, context: CallbackContext):
     m = update.effective_message
     api = requests.get("https://api.waifu.pics/nsfw/neko").json()
     url = api["url"]
