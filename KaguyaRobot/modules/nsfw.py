@@ -227,14 +227,14 @@ def bite(update: Update, context: CallbackContext):
 bite_handler = CommandHandler("bite", bite)
 dispatcher.add_handler(bite_handler)
 
-def gomp(update: Update, context: CallbackContext):
+def glomp(update: Update, context: CallbackContext):
     m = update.effective_message
-    api = requests.get("https://api.waifu.pics/sfw/gomp").json()
+    api = requests.get("https://api.waifu.pics/sfw/glomp").json()
     url = api["url"]
     m.reply_animation(animation=url)
 
-gomp_handler = CommandHandler("gomp", gomp)
-dispatcher.add_handler(gomp_handler)
+glomp_handler = CommandHandler("glomp", glomp)
+dispatcher.add_handler(glomp_handler)
 
 def slap(update: Update, context: CallbackContext):
     m = update.effective_message
