@@ -284,7 +284,7 @@ BLOCKANIMATION_HANDLER = DisableAbleCommandHandler(
 EARTHANIMATION_HANDLER = DisableAbleCommandHandler(
     "earth", earthanimation, run_async=True
 )
-dispatcher.add_handler(KILL_HANDLER)
+dispatcher.add_handler(SHOOT_HANDLER)
 dispatcher.add_handler(LOVE_HANDLER)
 dispatcher.add_handler(HACK_HANDLER)
 dispatcher.add_handler(BOMBS_HANDLER)
