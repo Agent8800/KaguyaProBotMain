@@ -121,7 +121,7 @@ def tslap(update: Update, context: CallbackContext):
     reply_text(reply, parse_mode=ParseMode.HTML)
 
 
-def pat(update: Update, context: CallbackContext):
+def tpat(update: Update, context: CallbackContext):
     bot = context.bot
     args = context.args
     message = update.effective_message
@@ -140,23 +140,23 @@ def pat(update: Update, context: CallbackContext):
         user1 = bot.first_name
         user2 = curr_user
 
-    pat_type = random.choice(("Text", "Gif", "Sticker"))
+    tpat_type = random.choice(("Text", "Gif", "Sticker"))
     if pat_type == "Gif":
         try:
-            temp = random.choice(fun_strings.PAT_GIFS)
+            temp = random.choice(fun_strings.TPAT_GIFS)
             reply_to.reply_animation(temp)
         except BadRequest:
-            pat_type = "Text"
+            tpat_type = "Text"
 
-    if pat_type == "Sticker":
+    if tpat_type == "Sticker":
         try:
-            temp = random.choice(fun_strings.PAT_STICKERS)
+            temp = random.choice(fun_strings.TPAT_STICKERS)
             reply_to.reply_sticker(temp)
         except BadRequest:
-            pat_type = "Text"
+            tpat_type = "Text"
 
-    if pat_type == "Text":
-        temp = random.choice(fun_strings.PAT_TEMPLATES)
+    if tpat_type == "Text":
+        temp = random.choice(fun_strings.TPAT_TEMPLATES)
         reply = temp.format(user1=user1, user2=user2)
         reply_to.reply_text(reply, parse_mode=ParseMode.HTML)
 
@@ -395,7 +395,7 @@ def goodmorning(update, context):
 SANITIZE_HANDLER = DisableAbleCommandHandler("sanitize", sanitize, run_async=True)
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs, run_async=True)
 TSLAP_HANDLER = DisableAbleCommandHandler("tslap", tslap, run_async=True)
-PAT_HANDLER = DisableAbleCommandHandler("tpat", tpat, run_async=True)
+TPAT_HANDLER = DisableAbleCommandHandler("tpat", tpat, run_async=True)
 ROLL_HANDLER = DisableAbleCommandHandler("roll", roll, run_async=True)
 TOSS_HANDLER = DisableAbleCommandHandler("toss", toss, run_async=True)
 SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug, run_async=True)
@@ -447,7 +447,7 @@ __command_list__ = [
     "rlg",
     "decide",
     "table",
-    "pat",
+    "tpat",
     "sanitize",
     "shout",
     "weebify",
@@ -460,7 +460,7 @@ __command_list__ = [
 __handlers__ = [
     RUNS_HANDLER,
     TSLAP_HANDLER,
-    PAT_HANDLER,
+    TPAT_HANDLER,
     ROLL_HANDLER,
     TOSS_HANDLER,
     SHRUG_HANDLER,
