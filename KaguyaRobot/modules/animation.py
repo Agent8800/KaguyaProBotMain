@@ -260,11 +260,11 @@ def love(update: Update, context: CallbackContext):
     msg.edit_text("True Love💞")
 
 
-def kill(update: Update, context: CallbackContext):
+def shoot(update: Update, context: CallbackContext):
     bot, args = context.bot, context.args
     msg = update.effective_message.reply_text("🔫")
     for x in range(EDIT_TIMES):
-        msg.edit_text(kill_you[x % 12])
+        msg.edit_text(shoot_you[x % 12])
         time.sleep(EDIT_SLEEP)
     msg.edit_text("⚰")
 
