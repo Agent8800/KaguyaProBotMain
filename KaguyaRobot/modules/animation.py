@@ -50,13 +50,13 @@ EDIT_SLEEP = 1
 EDIT_TIMES = 18
 
 
-# sleep how many times after each edit in 'kill'
+# sleep how many times after each edit in 'shoot'
 EDIT_SLEEP = 1
 # edit how many times in 'kill'
 EDIT_TIMES = 12
 
 
-kill_you = [
+shoot_you = [
     "Ｆｉｉｉｉｉｒｅ",
     "(　･ิω･ิ)︻デ═一-->",
 
@@ -270,7 +270,7 @@ def kill(update: Update, context: CallbackContext):
 
 
 
-KILL_HANDLER = DisableAbleCommandHandler("kill", kill, run_async=True)
+SHOOT_HANDLER = DisableAbleCommandHandler("shoot", shoot, run_async=True)
 LOVE_HANDLER = DisableAbleCommandHandler("love", love, run_async=True)
 HACK_HANDLER = DisableAbleCommandHandler("hack", hack, run_async=True)
 BOMBS_HANDLER = DisableAbleCommandHandler("bombs", bombs, run_async=True)
@@ -302,7 +302,7 @@ __command_list__ = [
     "clockanimation",
     "earthanimation",
     "blockanimation",
-    "kill",
+    "shoot",
 ]
 __handlers__ = [
     LOVE_HANDLER,
