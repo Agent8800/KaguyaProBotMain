@@ -216,6 +216,7 @@ else:
     MONGO_DB_URI = Config.MONGO_DB_URI
     ARQ_API_URL = Config.ARQ_API_URL
     ARQ_API_KEY = Config.ARQ_API_KEY
+    DB_URI = Config.SQLALCHEMY_DATABASE_URI
     
 
     try:
