@@ -76,6 +76,7 @@ class Config(object):
     REM_BG_API_KEY = "xYCR1ZyK3ZsofjH7Y6hPcyzC"
     OPENWEATHERMAP_ID = "887da2c60d9f13fe78b0f9d0c5cbaade"
     TRIGGERS = "/ !"
+    ALLOW_CHATS = True
 
 
 class Production(Config):
