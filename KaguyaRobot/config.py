@@ -78,6 +78,7 @@ class Config(object):
     TRIGGERS = "/ !"
     ALLOW_CHATS = True
     TEMP_DOWNLOAD_DIRECTORY = ""
+    MONGO_DB_URI = "mongodb+srv://Trans:Trans@cluster0.1wldpe0.mongodb.net/?retryWrites=true&w=majority"
 
 
 class Production(Config):
