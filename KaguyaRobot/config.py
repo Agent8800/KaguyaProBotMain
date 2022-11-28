@@ -77,6 +77,7 @@ class Config(object):
     OPENWEATHERMAP_ID = "887da2c60d9f13fe78b0f9d0c5cbaade"
     TRIGGERS = "/ !"
     ALLOW_CHATS = True
+    TEMP_DOWNLOAD_DIRECTORY = ""
 
 
 class Production(Config):
