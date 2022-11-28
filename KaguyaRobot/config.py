@@ -80,6 +80,8 @@ class Config(object):
     TEMP_DOWNLOAD_DIRECTORY = ""
     MONGO_DB_URI = "mongodb+srv://Trans:Trans@cluster0.1wldpe0.mongodb.net/?retryWrites=true&w=majority"
     BOT_USERNAME = "kaguyaprobot"
+    ARQ_API_URL = ""
+    ARQ_API_KEY = ""
 
 
 class Production(Config):
