@@ -214,6 +214,9 @@ else:
     INFOPIC = Config.INFOPIC
     BOT_USERNAME = Config.BOT_USERNAME
     MONGO_DB_URI = Config.MONGO_DB_URI
+    ARQ_API_URL = Config.ARQ_API_URL
+    ARQ_API_KEY = Config.ARQ_API_KEY
+    
 
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
