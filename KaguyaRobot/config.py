@@ -35,7 +35,7 @@ class Config(object):
     # RECOMMENDED
     SQLALCHEMY_DATABASE_URI = "postgres://qleyqiib:32ba45iIbv651ipGRXxs5RogVZp39iuG@ziggy.db.elephantsql.com/qleyqiib"  # needed for any database modules
     LOAD = []
-    NO_LOAD = ["rss"]
+    NO_LOAD = ["translation"]
     WEBHOOK = False
     INFOPIC = True
     URL = None
