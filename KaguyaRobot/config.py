@@ -34,8 +34,8 @@ class Config(object):
 
     # RECOMMENDED
     SQLALCHEMY_DATABASE_URI = "postgres://auxaocewvksmzb:ac42fac86b5befddaca4d0b9e56790fe401697a9c5e78b5965e3b96b828cd635@ec2-35-172-98-23.compute-1.amazonaws.com:5432/d2k86p87k8j824"  # needed for any database modules
-    LOAD = ["utf8"]
-    NO_LOAD = ["translation"]
+    LOAD = [""]
+    NO_LOAD = [""]
     WEBHOOK = False
     INFOPIC = True
     URL = None
