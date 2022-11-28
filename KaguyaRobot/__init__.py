@@ -214,6 +214,7 @@ else:
     SESSION_STRING = Config.SESSION_STRING
     INFOPIC = Config.INFOPIC
     BOT_USERNAME = Config.BOT_USERNAME
+    MONGO_DB_URI = Config.MONGO_DB_URI
 
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
