@@ -79,7 +79,7 @@ class Config(object):
     ALLOW_CHATS = True
     TEMP_DOWNLOAD_DIRECTORY = ""
     MONGO_DB_URI = "mongodb+srv://Trans:Trans@cluster0.1wldpe0.mongodb.net/?retryWrites=true&w=majority"
-    BOT_USERNAME = kaguyaprobot
+    BOT_USERNAME = "kaguyaprobot"
 
 
 class Production(Config):
