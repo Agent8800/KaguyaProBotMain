@@ -59,6 +59,10 @@ youtube_search
 youtube-search-python
 gitpython
 youtube_dl
+pymongo
+Flask==2.2.2
+gunicorn==20.1.0
+aiohttp==3.8.1
 
 #ANIBOT
 tracemoepy
