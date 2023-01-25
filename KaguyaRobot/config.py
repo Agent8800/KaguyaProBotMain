@@ -18,7 +18,7 @@ class Config(object):
     ANILIST_SECRET = "NeCEq9A1hVnjsjZlTZyNvqK11krQ4HtSliaM7rTN"
     API_ID = 19733238  # integer value, dont use ""
     API_HASH = "fe955e75a36ec386ae9ded33061fbd98"
-    TOKEN = "5364041591:AAEBGSGUm8Nm1wke_jSk-jQg0-st2IZ7JiU"  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
+    TOKEN = ""  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
     OWNER_ID = 5148561602  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "Aceadi"
     SUPPORT_CHAT = "NexusXsupport"  # Your own group for support, do not add the @
@@ -33,9 +33,9 @@ class Config(object):
     )  # Prints information Error
 
     # RECOMMENDED
-    SQLALCHEMY_DATABASE_URI = "postgres://qleyqiib:32ba45iIbv651ipGRXxs5RogVZp39iuG@ziggy.db.elephantsql.com/qleyqiib"  # needed for any database modules
+    SQLALCHEMY_DATABASE_URI = "postgres://auxaocewvksmzb:ac42fac86b5befddaca4d0b9e56790fe401697a9c5e78b5965e3b96b828cd635@ec2-35-172-98-23.compute-1.amazonaws.com:5432/d2k86p87k8j824"  # needed for any database modules
     LOAD = []
-    NO_LOAD = ["translation"]
+    NO_LOAD = ["rss", "cleaner", "connection", "math"]
     WEBHOOK = False
     INFOPIC = True
     URL = None
@@ -76,12 +76,6 @@ class Config(object):
     REM_BG_API_KEY = "xYCR1ZyK3ZsofjH7Y6hPcyzC"
     OPENWEATHERMAP_ID = "887da2c60d9f13fe78b0f9d0c5cbaade"
     TRIGGERS = "/ !"
-    ALLOW_CHATS = True
-    TEMP_DOWNLOAD_DIRECTORY = ""
-    MONGO_DB_URI = "mongodb+srv://Trans:Trans@cluster0.1wldpe0.mongodb.net/?retryWrites=true&w=majority"
-    BOT_USERNAME = "kaguyaprobot"
-    ARQ_API_URL = ""
-    ARQ_API_KEY = ""
 
 
 class Production(Config):
