@@ -194,10 +194,16 @@ else:
     API_HASH = Config.API_HASH
     ERROR_LOGS = Config.ERROR_LOGS
     DB_URL = Config.SQLALCHEMY_DATABASE_URI
+    MONGO_DB_URI = Config.MONGO_DB_URI
+    ARQ_API = Config.ARQ_API_KEY
+    ARQ_API_URL = Config.ARQ_API_URL
+    DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
     TEMP_DOWNLOAD_DIRECTORY = Config.TEMP_DOWNLOAD_DIRECTORY
     OPENWEATHERMAP_ID = Config.OPENWEATHERMAP_ID
     NO_LOAD = Config.NO_LOAD
+    HEROKU_API_KEY = Config.HEROKU_API_KEY
+    HEROKU_APP_NAME = Config.HEROKU_APP_NAME
     DEL_CMDS = Config.DEL_CMDS
     STRICT_GBAN = Config.STRICT_GBAN
     STRICT_GMUTE = Config.STRICT_GMUTE
@@ -211,13 +217,12 @@ else:
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
+    SESSION_STRING = Config.SESSION_STRING
     INFOPIC = Config.INFOPIC
     BOT_USERNAME = Config.BOT_USERNAME
-    MONGO_DB_URI = Config.MONGO_DB_URI
-    ARQ_API_URL = Config.ARQ_API_URL
-    ARQ_API_KEY = Config.ARQ_API_KEY
-    DB_URI = Config.SQLALCHEMY_DATABASE_URI
-    
+    STRING_SESSION = Config.STRING_SESSION
+    LASTFM_API_KEY = Config.LASTFM_API_KEY
+    CF_API_KEY = Config.CF_API_KEY
 
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
@@ -229,10 +234,17 @@ else:
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 
+if not SPAMWATCH_API:
+    sw = None
+    LOGGER.warning("SpamWatch API key missing! recheck your config")
+else:
+    try:
+        sw = spamwatch.Client(SPAMWATCH_API)
+    except:
+        sw = None
+        LOGGER.warning("Can't connect to SpamWatch!")
 
-session_name = TOKEN.split(":")[0]
-pgram = Client(session_name, api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
-
+from KaguyaRobot.modules.sql import SESSION
 
 defaults = tg.Defaults(run_async=True)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
