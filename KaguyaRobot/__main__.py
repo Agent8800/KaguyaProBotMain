@@ -26,7 +26,6 @@ from KaguyaRobot import (
     SUPPORT_CHAT,
     dispatcher,
     StartTime,
-    telethn,
     pbot,
     updater,
 )
