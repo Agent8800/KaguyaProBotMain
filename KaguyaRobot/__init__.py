@@ -10,8 +10,10 @@ import telegram.ext as tg
 
 from inspect import getfullargspec
 from redis import StrictRedis
+from aiohttp import ClientSession
 from Python_ARQ import ARQ
 from telethon import TelegramClient
+from telethon.sessions import StringSession
 from telethon.sessions import MemorySession
 from pyrogram.types import Message
 from pyrogram import Client, errors
@@ -246,11 +248,20 @@ from KaguyaRobot.modules.sql import SESSION
 
 defaults = tg.Defaults(run_async=True)
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
+telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
 dispatcher = updater.dispatcher
 print("[INFO]: INITIALIZING AIOHTTP SESSION")
+aiohttpsession = ClientSession()
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT")
-pbot = Client('KaguyaBot', api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+pbot = Client(
+    ":memory:",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=TOKEN,
+    workers=min(32, os.cpu_count() + 4),
+)
 apps = []
 apps.append(pbot)
 loop = asyncio.get_event_loop()
@@ -306,8 +317,7 @@ tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
 tg.MessageHandler = CustomMessageHandler
 
-REDIS_URL = "redis://xelcius:Xelcius~97@redis-11262.c301.ap-south-1-1.ec2.cloud.redislabs.com:11262"
-
+REDIS_URL = "redis://:25wDxkddl8J9ncWwMT6zMzthwpklnEAd@redis-19232.c283.us-east-1-4.ec2.cloud.redislabs.com:19232"
 
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
