@@ -7,6 +7,7 @@ ffmpeg-python==0.2.0
 redis==3.5.3
 aioredis==2.0.1
 hiredis==2.0.0
+motor==2.5.0
 Python_ARQ
 motor==3.1.1
 multicolorcaptcha
