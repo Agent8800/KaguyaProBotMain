@@ -22,6 +22,7 @@ from KaguyaRobot import (
     SUPPORT_CHAT,
     TOKEN,
     URL,
+    telethn,
     WEBHOOK,
     SUPPORT_CHAT,
     dispatcher,
