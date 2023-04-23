@@ -37,6 +37,7 @@ class Config(object):
     )  # Prints information Error
 
     # RECOMMENDED
+    STRING_SESSION = "uygh"
     BOT_USERNAME = "KaguyaProBor"
     SESSION_STRING = "gbx"
     MONGO_DB_URI = "mongodb+srv://Zoro:Zoro@cluster0.x1vigdr.mongodb.net/?retryWrites=true&w=majority"
