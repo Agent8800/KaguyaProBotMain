@@ -22,6 +22,7 @@ class Config(object):
     OWNER_ID = 5148561602  # If you dont know, run the bot and do /id in your private chat with it, also an integer
     OWNER_USERNAME = "Aceadi"
     SUPPORT_CHAT = "NexusXsupport"  # Your own group for support, do not add the @
+    ALLOW_CHATS = None
     JOIN_LOGGER = (
         -1001504105950
     )  # Prints any new group the bot is added to, prints just the name and ID.
