@@ -16,6 +16,7 @@ class Config(object):
 
     ANILIST_CLIENT = "8679"
     ANILIST_SECRET = "NeCEq9A1hVnjsjZlTZyNvqK11krQ4HtSliaM7rTN"
+    TEMP_DOWNLOAD_DIRECTORY = "downloads/"
     API_ID = 19733238  # integer value, dont use ""
     API_HASH = "fe955e75a36ec386ae9ded33061fbd98"
     TOKEN = ""  # This var used to be API_KEY but it is now TOKEN, adjust accordingly.
