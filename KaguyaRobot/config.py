@@ -23,6 +23,7 @@ class Config(object):
     OWNER_USERNAME = "Aceadi"
     SUPPORT_CHAT = "NexusXsupport"  # Your own group for support, do not add the @
     ALLOW_CHATS = None
+    ARQ_API_KEY = "VTHEER-VKDGXX-VOMAQR-TTSKAH-ARQ"
     JOIN_LOGGER = (
         -1001504105950
     )  # Prints any new group the bot is added to, prints just the name and ID.
